@@ -1,0 +1,12 @@
+/* Style for css_test.html */
+span {
+    background-color: yellow;
+}
+
+span::before {
+    content: '"';
+}
+
+span::after {
+    content: '"';
+}
