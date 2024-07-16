@@ -1,0 +1,18 @@
+#root {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.HeaderRight {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: calc(100% - 80px) 80px;
+}
+
+.title {
+    padding-top: 5px;
+    padding-left: 30px;
+    font-size: 50px;
+    font-weight: bold;
+}
