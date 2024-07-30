@@ -1,3 +1,3 @@
 export function showText() {
-    document.getElementById("root").innerText = localStroage.getItem("variable");
+    document.getElementById("root").innerText = localStorage.getItem("variable");
 }
