@@ -3,7 +3,7 @@ window.onload = () => {
     const indexedDB = window.indexedDB || window.mozIndexedDB || window.msIndexedDB || window.webkitIndexedDB;
     const request = indexedDB.open("MyStorage", 1);
 
-    window.onclick = () => {};
+    document.querySelector("body").onclick = () => {};
     request.onupgradeneeded = (e) => {
         /**@type {IDBDatabase} db */
         const db = e.target.result;
