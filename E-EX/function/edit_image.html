@@ -22,6 +22,7 @@
                 canvas.width = canvas.height = w;
                 ctx.fillStyle = "white";
                 ctx.fillRect(0,0,w,w);
+                ctx.drawImage(image, 0, (w-h)/2, w, h);
             }
             image.src = document.getElementById("original").src;
         </script>
