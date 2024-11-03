@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Website Loader</title>
+        <style>
+            body {
+                height: 100%;
+                background-color: lightblue;
+            }
+            #controller {
+                background-color: rgb(50,50,50);
+                width: 30vw;
+                margin-top: -8px;
+                margin-left: -8px;
+                margin-bottom: 0;
+                height: 40px;
+            }
+            #allFiles {
+                background-color: white;
+                width: 30vw;
+                height: calc(100vh - 40px);
+                margin-left: -8px;
+                margin-bottom: -8px;
+                overflow: scroll;
+            }
+            .file {
+                border-bottom: 1px solid black;
+                border-left: 1px solid black;
+                border-right: 1px solid black;
+            }
+            #addFolderButton {
+                position: relative;
+                height: 100%;
+                left: calc(100% - 100px);
+            }
+            #addFileButton {
+                position: relative;
+                height: 100%;
+                left: calc(100% - 100px);
+            }
+            #fileSetting {
+                background-color: white;
+                position: absolute;
+                top: 30px;
+                left: 32vw;
+                width: 66vw;
+                height: 90vh;
+            }
+            input[type="file"] {
+                margin: 0 30px 30px 30px;
+            }
+            #fileContent {
+                margin: 0 30px 0 30px;
+                border: 2px solid gray;
+                min-height: 100px;
+                max-height: 50vh;
+                overflow: scroll;
+                font-family: 'menlo';
+            }
+            #fileTitle {
+                margin: 30px;
+                font-weight: 700;
+            }
+            #saveButton, #refreshButton, #deleteButton {
+                margin: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="controller">
+            <svg id="addFolderButton" viewBox="0 0 100 100">
+                <g fill="white">
+                    <rect width="20" height="5" x="20" y="20"></rect>
+                    <rect width="20" height="5" x="60" y="20"></rect>
+                    <rect width="20" height="5" x="20" y="75"></rect>
+                    <rect width="20" height="5" x="60" y="75"></rect>
+                    <rect width="20" height="5" x="20" y="25" transform="translate(50,0) rotate(90)"></rect>
+                    <rect width="20" height="5" x="60" y="25" transform="translate(50,0) rotate(90)"></rect>
+                    <rect width="20" height="5" x="20" y="70" transform="translate(150,0) rotate(90)"></rect>
+                    <rect width="20" height="5" x="60" y="70" transform="translate(150,0) rotate(90)"></rect>
+                    <rect width="60" height="10" x="20" y="45" rx="5" ry="5"></rect>
+                    <rect width="60" height="10" x="0" y="0" rx="5" ry="5" transform="translate(55, 20) rotate(90)"></rect>
+                </g>
+            </svg>
+            <svg id="addFileButton" viewBox="0 0 100 100">
+                <g fill="white">
+                    <rect width="60" height="10" x="20" y="45" rx="5" ry="5"></rect>
+                    <rect width="60" height="10" x="0" y="0" rx="5" ry="5" transform="translate(55, 20) rotate(90)"></rect>
+                </g>
+            </svg>
+        </div>
+        <div id="allFiles">
+            
+        </div>
+        <div id="fileSetting">
+            <div id="fileTitle">選択されていません</div>
+            <input type="file">
+            <div id="fileContent"></div>
+            <button id="saveButton">保存する</button>
+            <button id="refreshButton">初期化する</button>
+            <button id="deleteButton">ファイル自体を削除する</button>
+        </div>
+        <script type="module" src="file-cell.js"></script>
+        <script type="module" src="folder-cell.js"></script>
+        <script type="module" src="main.js" defer></script>
+    </body>
+</html>
