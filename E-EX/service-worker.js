@@ -10,7 +10,7 @@ self.addEventListener("fetch", (event) => {
                         resolve(response);
                     }
                     else {
-                        cache.match(event.request.url.replace(/https?:\/\/[^\/]+/, "").replace(/\/$/, "") + "/index.html").then((res) => {
+                        cache.match(event.request.url.replace(/https?:\/\/[^\/]+\/E-EX/, "").replace(/\/$/, "") + "/index.html").then((res) => {
                             if (res) {
                                 resolve(res);
                             }
