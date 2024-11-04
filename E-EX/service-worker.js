@@ -4,8 +4,8 @@ self.addEventListener("fetch", (event) => {
     event.respondWith(
         new Promise((resolve) => {
             caches.open(CACHE_NAME).then((cache) => {
-                console.log("From Service Worker: ", event.request.url.replace(/https?:\/\/[^\/]+/, ""));
-                cache.match(event.request.url.replace(/https?:\/\/[^\/]+\//, "")).then((response) => {
+                console.log("From Service Worker: ", event.request.url.replace(/https?:\/\/[^\/]+\/E-EX/, ""));
+                cache.match(event.request.url.replace(/https?:\/\/[^\/]+\/E-EX/, "")).then((response) => {
                     if (response) {
                         resolve(response);
                     }
