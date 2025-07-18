@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <title>RGBの色見本</title>
+        <style>
+            @media screen and (min-width: 880px) and (max-width: 1200px) {
+                body {
+                    --main-section-width: 500px;
+                    --grid-template-columns: var(--main-section-width) calc(100% - var(--main-section-width));
+                    --grid-template-rows: 100vh;
+                    --bottom-section-height: 100vh;
+                    --col-width: 200px;
+                    --cols: 3;
+                }
+            }
+            @media screen and (min-width: 1200px) {
+                body {
+                    --main-section-width: 500px;
+                    --grid-template-columns: var(--main-section-width) calc(100% - var(--main-section-width));
+                    --grid-template-rows: 100vh;
+                    --bottom-section-height: 100vh;
+                    --col-width: 200px;
+                    --cols: 4;
+                }
+            }
+            @media screen and (max-width: 880px) {
+                body {
+                    --main-section-width: 100%;
+                    --grid-template-columns: 100%;
+                    --grid-template-rows: 500px calc(100vh - 500px);
+                    --bottom-section-height: calc(100vh - 500px);
+                    --cols: 4;
+                }
+            }
+            body {
+                margin: 0;
+            }
+            #body {
+                width: 100vw;
+                display: grid;
+                grid-template-rows: var(--grid-template-rows);
+                grid-template-columns: var(--grid-template-columns);
+                background-color: black;
+            }
+            #main-section {
+                background-color: black;
+                width: var(--main-section-width);
+                height: 500px;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+            #main-section > div {
+                background-color: white;
+                width: 100%;
+                height: 100%;
+            }
+            #main-section .color-display {
+                background-color: black;
+                width: 100%;
+                height: calc(100% - 150px);
+            }
+            #main-section input[type=range] {
+                width: 100%;
+                height: 40px;
+                margin: 0;
+            }
+            #main-section form > div > div {
+                line-height: 40px;
+            }
+            #bottom-section {
+                width: 100%;
+                height: var(--bottom-section-height);
+                display: grid;
+                grid-template-columns: repeat(var(--cols), 1fr);
+                overflow-y: scroll;
+            }
+            #current-color {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                background-color: black;
+                color: white;
+                font-size: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="body">
+            <div id="main-section">
+                <div>
+                    <div class="color-display"></div>
+                    <form>
+                        <div style="display: grid; grid-template-columns: 70px calc(100% - 75px); grid-template-rows: repeat(3, 40px);">
+                            <div>&nbsp;Red:</div>
+                            <div><input id="red" type="range" min="0" max="255" value="0"></div>
+                            <div>&nbsp;Green:</div>
+                            <div><input id="green" type="range" min="0" max="255" value="0"></div>
+                            <div>&nbsp;Blue:</div>
+                            <div><input id="blue" type="range" min="0" max="255" value="0"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="bottom-section"></div>
+        </div>
+        <div id="current-color">現在のRGB：<span>0,0,0</span></div>
+        <script>
+            const colors = [
+                { "name": "黒", "r": 0, "g": 0, "b": 0 },
+                { "name": "白", "r": 255, "g": 255, "b": 255 },
+                { "name": "赤", "r": 255, "g": 0, "b": 0 },
+                { "name": "緑", "r": 0, "g": 128, "b": 0 },
+                { "name": "青", "r": 0, "g": 0, "b": 255 },
+                { "name": "黄", "r": 255, "g": 255, "b": 0 },
+                { "name": "シアン", "r": 0, "g": 255, "b": 255 },
+                { "name": "マゼンタ", "r": 255, "g": 0, "b": 255 },
+                { "name": "灰色", "r": 128, "g": 128, "b": 128 },
+                { "name": "暗い灰色", "r": 169, "g": 169, "b": 169 },
+                { "name": "明るい灰色", "r": 211, "g": 211, "b": 211 },
+                { "name": "オレンジ", "r": 255, "g": 165, "b": 0 },
+                { "name": "ピンク", "r": 255, "g": 192, "b": 203 },
+                { "name": "紫", "r": 128, "g": 0, "b": 128 },
+                { "name": "茶色", "r": 165, "g": 42, "b": 42 },
+                { "name": "ライム", "r": 0, "g": 255, "b": 0 },
+                { "name": "ネイビー", "r": 0, "g": 0, "b": 128 },
+                { "name": "オリーブ", "r": 128, "g": 128, "b": 0 },
+                { "name": "ティール", "r": 0, "g": 128, "b": 128 },
+                { "name": "えんじ色", "r": 128, "g": 0, "b": 0 },
+                { "name": "銀色", "r": 192, "g": 192, "b": 192 },
+                { "name": "金色", "r": 255, "g": 215, "b": 0 },
+                { "name": "ベージュ", "r": 245, "g": 245, "b": 220 },
+                { "name": "コーラル", "r": 255, "g": 127, "b": 80 },
+                { "name": "ターコイズ", "r": 64, "g": 224, "b": 208 }
+            ];
+
+            const mainSection = document.getElementById("main-section");
+            const mainColorDisplay = mainSection.querySelector(".color-display");
+            const mainForm = mainSection.querySelector("form");
+            const currentColorSpan = document.querySelector("#current-color span");
+            const body = document.getElementById("body");
+            mainForm.oninput = (e) => {
+                mainColorDisplay.style.backgroundColor = `rgb(${mainForm.red.value},${mainForm.green.value},${mainForm.blue.value})`;
+                currentColorSpan.innerText = `${mainForm.red.value},${mainForm.green.value},${mainForm.blue.value}`;
+            };
+            class ColorBox extends HTMLElement {
+                static observedAttributes = ["red", "green", "blue", "name", "selected"];
+                constructor() {
+                    super();
+                    const shadow = this.attachShadow({ mode: "open" });
+                    const template = document.createElement("template");
+                    template.innerHTML = `
+                        <div class="box" style="height: 100%; padding: 5px; background-color: black;">
+                            <div class="color-display" style="width: 100%; height: 80px; background-color: black; display: flex; justify-content: center; align-items: center; font-weight: bold;">
+                                <span></span>
+                            </div>
+                            <svg viewBox="0 0 100 100" width="100%" height="60" preserveAspectRatio="none" xlmns="http://www.w3.org/2000/svg">
+                                <rect id="red_l" x="0" y="20" width="50" height="10" fill="white" /><rect id="red_r" x="50" y="20" width="50" height="10" fill="gray" /><rect id="red_f" x="47" y="15" width="6" height="20" fill="white" />
+                                <rect id="green_l" x="0" y="50" width="50" height="10" fill="white" /><rect id="green_r" x="50" y="50" width="50" height="10" fill="gray" /><rect id="green_f" x="47" y="45" width="6" height="20" fill="white" />
+                                <rect id="blue_l" x="0" y="80" width="50" height="10" fill="white" /><rect id="blue_r" x="50" y="80" width="50" height="10" fill="gray" /><rect id="blue_f" x="47" y="75" width="6" height="20" fill="white" />
+                            </svg>
+                        </div>
+                    `;
+                    shadow.appendChild(template.content.cloneNode(true));
+                }
+                attributeChangedCallback(name, _, newValue) {
+                    if (name == "name") this.shadowRoot.querySelector("span").innerText = newValue;
+                    else if (name == "selected") this.shadowRoot.querySelector(".box").style.backgroundColor = this.hasAttribute("selected") ? "blue" : "black";
+                    else {
+                        let red = this.getAttribute("red");
+                        let green = this.getAttribute("green");
+                        let blue = this.getAttribute("blue");
+                        this.shadowRoot.querySelector(".color-display").style.backgroundColor = `rgb(${red},${green},${blue})`;
+                        let brightness = (red * 299 + green * 587 + blue * 114) / 1000;
+                        this.shadowRoot.querySelector("span").style.color = brightness > 128 ? "black" : "white";
+                        this.shadowRoot.querySelector("#red_l").setAttribute("width", red / 255 * 100);
+                        this.shadowRoot.querySelector("#red_r").setAttribute("x", red / 255 * 100);
+                        this.shadowRoot.querySelector("#red_r").setAttribute("width", 100 - red / 255 * 100);
+                        this.shadowRoot.querySelector("#red_f").setAttribute("x", red / 255 * 100 - 3);
+                        this.shadowRoot.querySelector("#green_l").setAttribute("width", green / 255 * 100);
+                        this.shadowRoot.querySelector("#green_r").setAttribute("x", green / 255 * 100);
+                        this.shadowRoot.querySelector("#green_r").setAttribute("width", 100 - green / 255 * 100);
+                        this.shadowRoot.querySelector("#green_f").setAttribute("x", green / 255 * 100 - 3);
+                        this.shadowRoot.querySelector("#blue_l").setAttribute("width", blue / 255 * 100);
+                        this.shadowRoot.querySelector("#blue_r").setAttribute("x", blue / 255 * 100);
+                        this.shadowRoot.querySelector("#blue_r").setAttribute("width", 100 - blue / 255 * 100);
+                        this.shadowRoot.querySelector("#blue_f").setAttribute("x", blue / 255 * 100 - 3);
+                    }
+                }
+            }
+            customElements.define("color-box", ColorBox);
+            
+            const bottomSection = document.getElementById("bottom-section");
+            var isAnimating = false;
+            var isAnimating2 = false;
+            var isAnimating3 = false;
+            var isShrinked = false;
+            function isWideScreen() {
+                return parseInt(window.getComputedStyle(document.querySelector("body")).getPropertyValue("width")) > 700;
+            }
+            for (let colorData of colors) {
+                const newColorBox = document.createElement("color-box");
+                newColorBox.setAttribute("red", colorData.r);
+                newColorBox.setAttribute("blue", colorData.b);
+                newColorBox.setAttribute("green", colorData.g);
+                newColorBox.setAttribute("name", colorData.name);
+                bottomSection.appendChild(newColorBox);
+            }
+
+            for (let colorBox of Array.from(document.querySelectorAll("color-box"))) {
+                colorBox.onclick = () => {
+                    mainForm.red.value = colorBox.getAttribute("red");
+                    mainForm.green.value = colorBox.getAttribute("green");
+                    mainForm.blue.value = colorBox.getAttribute("blue");
+                    mainForm.oninput();
+                    for (let _colorBox of Array.from(document.querySelectorAll("color-box"))) {
+                        _colorBox.removeAttribute("selected");
+                    }
+                    colorBox.setAttribute("selected", "");
+                };
+            }
+
+            bottomSection.onscroll = () => {
+                if (isWideScreen()) return;
+                else if (isAnimating || isAnimating2 || isAnimating3 || isShrinked) return;
+                else {
+                    isAnimating = true;
+                    isAnimating2 = true;
+                    isAnimating3 = true;
+                    const animation1 = mainSection.animate([
+                        { height: "250px", offset: 1, easing: "ease-out" }
+                    ], { duration: 300 });
+                    const animation2 = bottomSection.animate([
+                        { height: "calc(100vh - 250px)", offset: 1, easing: "ease-out" }
+                    ], { duration: 300 });
+                    const animation3 = body.animate([
+                        { gridTemplateRows: "250px calc(100vh - 250px)", offset: 1, easing: "ease-out" }
+                    ], { duration: 300 });
+                    animation1.finished.then(() => {
+                        mainSection.style.height = "250px";
+                        animation1.cancel();
+                        isAnimating = false;
+                        isShrinked = true;
+                    });
+                    animation2.finished.then(() => {
+                        bottomSection.style.height = "calc(100vh - 250px)";
+                        animation2.cancel();
+                        isAnimating2 = false;
+                        isShrinked = true;
+                    });
+                    animation3.finished.then(() => {
+                        body.style.gridTemplateRows = "250px calc(100vh - 250px)";
+                        animation3.cancel();
+                        isAnimating3 = false;
+                        isShrinked = true;
+                    });
+                }
+            };
+
+            mainSection.onclick = async () => {
+                if (isWideScreen()) return;
+                else if (isAnimating || isAnimating2 || isAnimating3 || !isShrinked) return;
+                else {
+                    isAnimating = true;
+                    isAnimating2 = true;
+                    isAnimating3 = true;
+                    const animation1 = mainSection.animate([
+                        { height: "500px", offset: 1, easing: "ease-in-out" }
+                    ], { duration: 300 });
+                    const animation2 = bottomSection.animate([
+                        { height: "calc(100vh - 500px)", offset: 1, easing: "ease-in-out" }
+                    ], { duration: 300 });
+                    const animation3 = body.animate([
+                        { gridTemplateRows: "500px calc(100vh - 500px)", offset: 1, easing: "ease-in-out" }
+                    ], { duration: 300 });
+                    animation1.finished.then(() => {
+                        mainSection.style.height = "500px";
+                        animation1.cancel();
+                        isAnimating = false;
+                        isShrinked = false;
+                    });
+                    animation2.finished.then(() => {
+                        bottomSection.style.height = "calc(100vh - 500px)";
+                        animation2.cancel();
+                        isAnimating2 = false;
+                        isShrinked = false;
+                    });
+                    animation3.finished.then(() => {
+                        body.style.gridTemplateRows = "500px calc(100vh - 500px)";
+                        animation3.cancel();
+                        isAnimating3 = false;
+                        isShrinked = false;
+                    });
+                }
+            };
+        </script>
+    </body>
+</html>
