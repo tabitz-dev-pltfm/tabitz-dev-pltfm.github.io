@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+        <title>化学反応式の演習ツール</title>
+        <style>
+            body {
+                margin: 0;
+                font-family: 'ヒラギノ角ゴシック', Arial;
+            }
+            .substance_section {
+                margin: 0 10vw;
+                width: 80vw;
+                box-sizing: border-box;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .substance_box {
+                width: 40vw;
+                height: 40vw;
+                overflow: scroll;
+                border: 3px solid #0062ff;
+                border-radius: 5px;
+                padding: 5px;
+                margin: 5px;
+                box-sizing: border-box;
+            }
+            .substance_box > p {
+                pointer-events: none;
+            }
+            .substance_box img {
+                width: 100%;
+            }
+            .box_controller {
+                width: 20vw;
+                height: 40vw;
+                background-color: lightgray;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            p {
+                margin: 0.2em 0;
+            }
+            .arrow_up, .arrow_down {
+                text-align: center;
+                color: blue;
+                background-color: white;
+                border: 1px solid blue;
+                margin: 5px;
+                border-radius: 3px;
+            }
+            .button_plus, .button_minus {
+                text-align: center;
+                color: gray;
+                background-color: transparent;
+                border: 1px solid gray;
+                border-radius: 3px;
+                width: 50%;
+                font-size: 12px;
+                box-sizing: border-box;
+            }
+            .coefficient_area {
+                width: 20vw;
+                height: 15vw;
+            }
+            .coefficient_area > div {
+                display: flex;
+                width: 100%;
+            }
+            #container {
+                width: 100vw;
+                text-align: center;
+                overflow: scroll;
+            }
+            input[type=number] {
+                width: 30px;
+                text-align: center;
+                font-size: 1.2em;
+            }
+            h3 {
+                text-align: center;
+            }
+            #description {
+                padding: 10px;
+                border: 3px solid green;
+                box-sizing: border-box;
+            }
+            #header {
+                position: sticky;
+                top: 0;
+                left: 0;
+                background-color: white;
+                z-index: 3;
+            }
+            #state-view {
+                display: grid;
+                width: 100vw;
+                height: 30px;
+                grid-template-columns: 30px calc(100vw - 60px) 30px;
+                grid-template-rows: 30px;
+            }
+            #question_number {
+                background-color: green;
+                color: white;
+                text-align: center;
+                font-size: 10px;
+                line-height: 30px;
+            }
+            #hidden-menu {
+                display: none;
+                background-color: green;
+                color: white;
+                width: 100vw;
+                min-height: 100px;
+                text-align: center;
+                padding: 10px;
+                box-sizing: border-box;
+                font-size: 20px;
+            }
+            #hidden-search, #hidden-substance-search {
+                display: none;
+                background-color: green;
+                padding-bottom: 10px;
+                box-sizing: border-box;
+            }
+            #searching-form, #searching-substance-form {
+                color: white;
+                width: 100vw;
+                text-align: center;
+                padding: 10px;
+                box-sizing: border-box;
+                font-size: 20px;
+            }
+            input[type=checkbox] {
+                width: 30px;
+                height: 30px;
+            }
+            #search, #search2 {
+                background-color: white;
+                font-size: 20px;
+            }
+            #search-result, #search-substance-result {
+                width: calc(100vw - 50px);
+                max-height: 100px;
+                background-color: white;
+                color: black;
+                padding: 5px;
+                box-sizing: border-box;
+                overflow: scroll;
+            }
+            #search-result > div, #search-substance-result > div {
+                background-color: bisque;
+                border: 2px solid orange;
+                border-radius: 2px;
+                box-sizing: border-box;
+            }
+            #hidden-substance-preview, #hidden-substance-selector {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: green;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+            .trashcan {
+                width: 20px;
+                height: 20px;
+                border-radius: 20%;
+            }
+            #correct-bar {
+                display: none;
+                width: 80vw;
+                height: 6px;
+                border-radius: 3px;
+                background: linear-gradient(0.25turn, lightgreen, lightblue);
+            }
+            #wrong-bar {
+                width: 80vw;
+                height: 6px;
+                border-radius: 3px;
+                background: linear-gradient(0.25turn, red, purple);
+            }
+            #footer {
+                background: linear-gradient(-60deg, lightgreen, yellow);
+                text-align: center;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <div id="state-view">
+                <div id="question_number"></div>
+                <div style="text-align: center; line-height: 30px;"><a href="javascript:showSearchingForm()">検索</a>｜<progress></progress>｜<a href="javascript:goToNextQuestion()">次の問題へ</a></div>
+                <div id="hamburger" style="background-color: green;"><svg id="hamburger-svg" style="display: block;" width="30" height="30" viewBox="0 0 100 100"><rect width="50" height="10" fill="white" x="25" y="28" rx="5" ry="5" /><rect width="50" height="10" fill="white" x="25" y="45" rx="5" ry="5" /><rect width="50" height="10" fill="white" x="25" y="63" rx="5" ry="5" /></svg><svg id="hamburger-cross-svg" style="display: none;" width="100" height="100" viewBox="0 0 100 100"><g transform="translate(25,25) rotate(45, 25, 25)"><rect width="50" height="10" fill="blue" x="0" y="20" /><rect width="10" height="50" fill="blue" x="20" y="0" /></g></svg></div>
+            </div>
+            <div id="hidden-menu">
+                <form id="settings">
+                    <div style="display: flex; justify-content: center; align-items: center;"><label for="doPractice">問題演習形式にする</label><input id="doPractice" type="checkbox" checked /></div>
+                    <div style="display: flex; justify-content: center; align-items: center;"><label for="mode">ランダムに出題する</label><input id="mode" type="checkbox" checked /></div>
+                    <hr>
+                    順番通りに出題する場合：
+                    <div style="display: flex; justify-content: center; align-items: center;"><label for="start">最初に出題する番号#</label><input id="start" type="number" min="0" value="0" /></div>
+                    <div style="display: flex; justify-content: center; align-items: center;"><input id="hasEnd" type="checkbox" /><label for="end">最後に出題する番号#</label><input id="end" type="number" min="0" value="0" /></div>
+                    <div>（問題は#0〜#<span id="activeText"></span>まで）</div>
+                </form>
+                <button style="padding: 10px; background-color: orange; color: white; border: 3px solid white; border-radius: 5px; font-size: 20px;" onclick="modifySettings()"><strong>設定を完了する</strong></button>
+            </div>
+            <div id="hidden-search">
+                <form id="searching-form" onsubmit="return false;">
+                    <div style="display: flex; justify-content: center; align-items: center;"><label for="search">検索&emsp;</label><input id="search" type="text" oninput="searchAnything(this.value)" /></div>
+                </form>
+                <div style="display: flex; justify-content: center; align-items: center; background-color: green;"><div id="search-result"></div></div>
+            </div>
+            <div id="hidden-substance-preview" style="display: none;">
+                <a href="javascript:closeSubstancePreview()">物質プレビューを閉じる ×</a>
+                <div class="substance_box" style="background-color: white"><p id="preview-formula"></p><p id="preview-name"></p></div>
+            </div>
+            <div id="hidden-substance-search" style="display: none;">
+                <form id="searching-substance-form" onsubmit="return false;">
+                    <p>化学反応式に追加する物質を選択：</p>
+                    <div style="display: flex; justify-content: center; align-items: center;"><label for="search2">検索&emsp;</label><input id="search2" type="text" oninput="searchSubstanceCandidates(this.value)" /></div>
+                    <a href="javascript:closeSearchingSubstanceForm()">追加をキャンセル ×</a>
+                </form>
+                <div style="display: flex; justify-content: center; align-items: center; background-color: green;"><div id="search-substance-result"></div></div>
+            </div>
+            <div id="hidden-substance-selector" style="display: none;">
+                <div class="substance_box" style="background-color: white"><p id="preview-substance-formula"></p><p id="preview-substance-name"></p></div>
+            </div>
+            <div id="description"></div>
+            <div id="container"><div style="pointer-events: none;"></div></div>
+            <div style="display: flex; justify-content: center; align-items: center;"><div id="correct-bar"></div><div id="wrong-bar"></div></div>
+        </div>
+        <div id="list"></div>
+        <div id="footer">
+            <a href="javascript:showCurrentAnswer()">解答を見る</a>
+        </div>
+        <script defer>
+            window.MathJax = {
+                loader: {load: ['[tex]/mhchem']},
+                tex: {
+                    inlineMath: {'[+]': [['$', '$']]}
+                },
+                options: {
+                    enableMenu: false,
+                }
+            };
+        </script>
+        <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js" defer></script>
+        <script defer>
+            const description = document.getElementById("description");
+            const container = document.querySelector("#container > div");
+            const list = document.getElementById("list");
+            const questionNumberDisplay = document.getElementById("question_number");
+            const progressBar = document.querySelector("progress");
+            const hiddenMenu = document.getElementById("hidden-menu");
+            const hiddenSearch = document.getElementById("hidden-search");
+            const hiddenSubstanceSearch = document.getElementById("hidden-substance-search");
+            const hamburger = document.getElementById("hamburger");
+            const searchResultArea = document.getElementById("search-result");
+            const searchSubstanceResultArea = document.getElementById("search-substance-result");
+            const hiddenSubstancePreview = document.getElementById("hidden-substance-preview");
+            const hiddenSubstanceSelector = document.getElementById("hidden-substance-selector");
+            const correctBar = document.getElementById("correct-bar");
+            const wrongBar = document.getElementById("wrong-bar");
+            const settingsForm = document.getElementById("settings");
+            const substances_information = [];
+            var backup = [];
+            var targetQuestionNumber;
+            var numbersHistory = [];
+            var currentEquation = "";
+            var currentAnswer = "";
+            var isRandom = true;
+            var isPractice = true;
+            var isGoingToAppendBefore = true;
+            var startIndex = 0;
+            var endIndex = 0;
+            var hasEndIndex = false;
+
+            hamburger.onclick = () => {
+                renderSettings();
+                hiddenMenu.style.display = hiddenMenu.style.display == "block" ? "" : "block";
+            }
+
+            var parameters = new URL(window.location).searchParams;
+            startIndex = parameters.has("s") ? Number(parameters.get("s")) : 0;
+            hasEndIndex = parameters.has("e");
+            endIndex = hasEndIndex ? Number(parameters.get("e")) : startIndex;
+
+            if (parameters.get("r") == "f") isRandom = false;
+            else isRandom = true;
+
+            if (parameters.get("p") == "f") isPractice = false;
+            else isPractice = true;
+            
+            renderSettings();
+
+            function renderSettings() {
+                settingsForm.doPractice.checked = isPractice;
+                settingsForm.mode.checked = isRandom;
+                settingsForm.start.value = startIndex;
+                settingsForm.end.value = endIndex;
+                settingsForm.hasEnd.checked = hasEndIndex;
+            }
+            function modifySettings() {
+                if (settingsForm.start.value < 0 || settingsForm.start.value >= backup.length) return;
+                if (settingsForm.end.value < 0 || settingsForm.end.value >= backup.length) return;
+                const a = document.createElement("a");
+                let newURL = new URL(window.location);
+                newURL.searchParams.delete("p");
+                if (!settingsForm.doPractice.checked) newURL.searchParams.append("p", "f");
+                newURL.searchParams.delete("r");
+                if (!settingsForm.mode.checked) newURL.searchParams.append("r", "f");
+                newURL.searchParams.delete("s");
+                newURL.searchParams.append("s", String(settingsForm.start.value));
+                newURL.searchParams.delete("e");
+                if (settingsForm.hasEnd.checked) newURL.searchParams.append("e", String(settingsForm.end.value));
+                hiddenMenu.style.display =  "";
+                a.href = newURL.toString();
+                a.click();
+            }
+            function showEquationOfSerachingResultOnNewTab(index) {
+                const a = document.createElement("a");
+                let newURL = new URL(window.location);
+                newURL.searchParams.delete("p");
+                newURL.searchParams.append("p", "f");
+                newURL.searchParams.delete("r");
+                newURL.searchParams.append("r", "f");
+                newURL.searchParams.delete("s");
+                newURL.searchParams.append("s", String(index));
+                newURL.searchParams.delete("e");
+                newURL.searchParams.append("e", String(index));
+                a.href = newURL.toString();
+                a.target = "_blank";
+                a.click();
+            }
+
+            fetch("chemical_equations.txt").then(res => res.text()).then(data => {
+                //コメントアウト部分を除去
+                const allRows = data.split("\n").filter(value => !(/^\/\/.*/.test(value)) && value != "");
+                const splittedData = allRows.map(value => {
+                    let splitted = value.split("|");
+                    return splitted;
+                });
+                backup = splittedData;
+                progressBar.max = (!hasEndIndex) ? backup.length : (startIndex < endIndex) ? endIndex - startIndex + 1 : (startIndex === endIndex) ? backup.length : backup.length - startIndex + endIndex + 1;
+                document.querySelector("#activeText").innerText = backup.length - 1;
+                settingsForm.start.max = backup.length - 1;
+                settingsForm.end.max = backup.length - 1;
+                if (isRandom) {
+                    targetQuestionNumber = Math.trunc(Math.random() * backup.length);
+                    numbersHistory.push(targetQuestionNumber);
+                } else {
+                    targetQuestionNumber = startIndex;
+                    numbersHistory.push(targetQuestionNumber);
+                }
+                for (let data of splittedData) {
+                    //物質ごとの画像URLを抽出
+                    let substance_formulas = data[0].split(/ \+ | -> /g).filter(v => v != "").map(v => v.replaceAll(" ", "").replace(/^[0-9]+/g, ""));
+                    let substances_urls = data[1].split(",").map((value, index) => {
+                        let substance = value.replace(/\[.*\]/g, "").split(" ").filter(v => v != "").join(" ");
+                        let url = value.replace(substance, "").replace("[","").replace("]","").split(" ").filter(v => v != "");
+                        return [substance_formulas[index], substance, url];
+                    }).filter(v => v[1] != "#");
+                    substances_information.push(...substances_urls);
+                }
+                console.log(substances_information);
+                const wait = setInterval(() => {
+                    if (typeof MathJax.typesetClear !== "undefined" && typeof MathJax.typesetPromise !== "undefined") {
+                        clearInterval(wait);
+                        description.innerHTML = backup[targetQuestionNumber][2].replaceAll("\\n", "<br>").replace(/\[(http.*?)\]/g, "<img src='$1' width='30' height='30'>");
+                        currentAnswer = backup[targetQuestionNumber][0];
+                        showDetails(isPractice ? " -> " : backup[targetQuestionNumber][0]);
+                        questionNumberDisplay.innerText = "#" + String(targetQuestionNumber);
+                        progressBar.value = numbersHistory.length;
+                    }
+                });
+            });
+
+            async function showDetails(equation) {
+                if (backup.length == 0) return;
+                container.innerHTML = "$\\ce{" + equation + "}$";
+                MathJax.typesetClear([container]);
+                await MathJax.typesetPromise([container]);
+                while (list.firstChild) {
+                    list.removeChild(list.firstChild);
+                }
+                let before_after = equation.split("->");
+                let substances_before = before_after[0].split(/ \+ /g).map(v => v.replaceAll(" ", "").replace(/^[0-9]+/g, "")).filter(v => v != "");
+                let substances_after = before_after[1].split(/ \+ /g).map(v => v.replaceAll(" ", "").replace(/^[0-9]+/g, "")).filter(v => v != "");
+                let coefficient_before = before_after[0].split(/ \+ /g).filter(v => v != "").map(v => v.replaceAll(" ", "").match(/^[0-9]+/g) ? Number(v.replaceAll(" ", "").match(/^[0-9]+/g)[0]) : 1);
+                let coefficient_after = before_after[1].split(/ \+ /g).filter(v => v != "").map(v => v.replaceAll(" ", "").match(/^[0-9]+/g) ? Number(v.replaceAll(" ", "").match(/^[0-9]+/g)[0]) : 1);
+                console.log(substances_before, substances_after);
+                let formula_areas = [];
+                let h3_before = document.createElement("h3");
+                h3_before.innerHTML = "反応物&emsp;<a href='javascript:showSubstanceSearchingForm(true)'>＋追加</a>";
+                list.appendChild(h3_before);
+                for (let i=0; i<substances_before.length; i++) {
+                    let newSection = document.createElement("div");
+                    newSection.className = "substance_section";
+                    let newTrashcan = document.createElement("img");
+                    newTrashcan.src = "trashcan.png";
+                    newTrashcan.className = "trashcan";
+                    newTrashcan.onclick = () => removeSubstanceFromList(i);
+                    newSection.appendChild(newTrashcan);
+                    let newBox = document.createElement("div");
+                    newBox.className = "substance_box";
+                    let information = searchInformationFromFormula(substances_before[i]);
+                    let formulaArea = document.createElement("p");
+                    formulaArea.innerHTML = "$\\ce{" + substances_before[i] + "}$";
+                    formula_areas.push(formulaArea);
+                    let nameArea = document.createElement("p");
+                    nameArea.innerHTML = information[1];
+                    newBox.appendChild(formulaArea);
+                    newBox.appendChild(nameArea);
+                    for (let url of information[2]) {
+                        let img = document.createElement("img");
+                        img.src = url;
+                        newBox.appendChild(img);
+                    }
+                    newSection.appendChild(newBox);
+                    let newController = document.createElement("div");
+                    newController.className = "box_controller";
+                    newController.innerHTML = `<div><button class="arrow_up" onclick="moveBackward(${i})">▲</button><div class="coefficient_area"><input type="number" value="${coefficient_before[i]}" min="1" oninput="changeCoefficientNumber(${i}, this.value)"><div><button class="button_minus" onclick="this.parentElement.parentElement.querySelector('input[type=number]').value = this.parentElement.parentElement.querySelector('input[type=number]').value - 1 < 1 ? 1 : this.parentElement.parentElement.querySelector('input[type=number]').value - 1; changeCoefficientNumber(${i}, this.parentElement.parentElement.querySelector('input[type=number]').value)">-</button><button class="button_plus" onclick="this.parentElement.parentElement.querySelector('input[type=number]').value = Number(this.parentElement.parentElement.querySelector('input[type=number]').value) + 1; changeCoefficientNumber(${i}, this.parentElement.parentElement.querySelector('input[type=number]').value)">+</button></div></div><button class="arrow_down" onclick="moveForward(${i})">▼</button></div>`;
+                    newSection.appendChild(newController);
+                    list.appendChild(newSection);
+                }
+                list.appendChild(document.createElement("hr"));
+                let h3_after = document.createElement("h3");
+                h3_after.innerHTML = "生成物&emsp;<a href='javascript:showSubstanceSearchingForm(false)'>＋追加</a>";
+                list.appendChild(h3_after);
+                for (let i=0; i<substances_after.length; i++) {
+                    let newSection = document.createElement("div");
+                    newSection.className = "substance_section";
+                    let newTrashcan = document.createElement("img");
+                    newTrashcan.src = "trashcan.png";
+                    newTrashcan.className = "trashcan";
+                    newTrashcan.onclick = () => removeSubstanceFromList(i + substances_before.length);
+                    newSection.appendChild(newTrashcan);
+                    let newBox = document.createElement("div");
+                    newBox.className = "substance_box";
+                    let information = searchInformationFromFormula(substances_after[i]);
+                    let formulaArea = document.createElement("p");
+                    formulaArea.innerHTML = "$\\ce{" + substances_after[i] + "}$";
+                    formula_areas.push(formulaArea);
+                    let nameArea = document.createElement("p");
+                    nameArea.innerHTML = information[1];
+                    newBox.appendChild(formulaArea);
+                    newBox.appendChild(nameArea);
+                    for (let url of information[2]) {
+                        let img = document.createElement("img");
+                        img.src = url;
+                        newBox.appendChild(img);
+                    }
+                    newSection.appendChild(newBox);
+                    let newController = document.createElement("div");
+                    newController.className = "box_controller";
+                    newController.innerHTML = `<div><button class="arrow_up" onclick="moveBackward(${i + substances_before.length})">▲</button><div class="coefficient_area"><input type="number" value="${coefficient_after[i]}" min="1" oninput="changeCoefficientNumber(${i + substances_before.length}, this.value)"><div><button class="button_minus" onclick="this.parentElement.parentElement.querySelector('input[type=number]').value = this.parentElement.parentElement.querySelector('input[type=number]').value - 1 < 1 ? 1 : this.parentElement.parentElement.querySelector('input[type=number]').value - 1; changeCoefficientNumber(${i + substances_before.length}, this.parentElement.parentElement.querySelector('input[type=number]').value)">-</button><button class="button_plus" onclick="this.parentElement.parentElement.querySelector('input[type=number]').value = Number(this.parentElement.parentElement.querySelector('input[type=number]').value) + 1; changeCoefficientNumber(${i + substances_before.length}, this.parentElement.parentElement.querySelector('input[type=number]').value)">+</button></div></div><button class="arrow_down" onclick="moveForward(${i + substances_before.length})">▼</button></div>`;
+                    newSection.appendChild(newController);
+                    list.appendChild(newSection);
+                }
+                currentEquation = equation;
+                MathJax.typesetClear(formula_areas);
+                await MathJax.typesetPromise(formula_areas);
+                vertifyEquation();
+            }
+
+            async function changeCoefficientNumber(index, changeTo) {
+                if (changeTo < 1) return;
+                let substances = currentEquation.split(/ \+ | -> /g).map(v => v.replaceAll(" ", "").replace(/^[0-9]+/g, "")).filter(v => v != "");
+                let coefficient = currentEquation.split(/ \+ | -> /g).map(v => v.replaceAll(" ", "")).filter(v => v != "").map(v => v.match(/^[0-9]+/g) ? Number(v.match(/^[0-9]+/g)[0]) : 1);
+                let newEquation = currentEquation.replace((coefficient[index] == 1 ? "" : String(coefficient[index]))+substances[index], (changeTo == 1 ? "" : String(changeTo))+substances[index]);
+                currentEquation = newEquation;
+                container.innerHTML = "$\\ce{" + currentEquation + "}$";
+                MathJax.typesetClear([container]);
+                await MathJax.typesetPromise([container]);
+                vertifyEquation();
+            }
+
+            async function moveForward(index) {
+                let before_after = currentEquation.split(" -> ");
+                let substances_before = before_after[0].split(/ \+ /g).filter(v => v != "").map(v => v.replaceAll(" ", ""));
+                let substances_after = before_after[1].split(/ \+ /g).filter(v => v != "").map(v => v.replaceAll(" ", ""));
+                let newEquation = "";
+                if (index < 0 || index > substances_before.length + substances_after.length - 1) {
+                    return;
+                } else if (index == substances_before.length - 1) {
+                    substances_after.unshift(substances_before.splice(substances_before.length - 1, 1)[0]);
+                    newEquation = substances_before.join(" + ") + " -> " + substances_after.join(" + ");
+                } else if (index < substances_before.length - 1) {
+                    substances_before.splice(index + 1, 0, substances_before.splice(index, 1));
+                    newEquation = substances_before.join(" + ") + " -> " + substances_after.join(" + ");
+                } else {
+                    substances_after.splice(index + 1 - substances_before.length, 0, substances_after.splice(index - substances_before.length, 1));
+                    newEquation = substances_before.join(" + ") + " -> " + substances_after.join(" + ");
+                }
+                showDetails(newEquation);
+            }
+
+            async function moveBackward(index) {
+                let before_after = currentEquation.split(" -> ");
+                let substances_before = before_after[0].split(/ \+ /g).filter(v => v != "").map(v => v.replaceAll(" ", ""));
+                let substances_after = before_after[1].split(/ \+ /g).filter(v => v != "").map(v => v.replaceAll(" ", ""));
+                let newEquation = "";
+                if (index < 0 || index > substances_before.length + substances_after.length - 1) {
+                    return;
+                } else if (index == substances_before.length) {
+                    substances_before.push(substances_after.shift());
+                    newEquation = substances_before.join(" + ") + " -> " + substances_after.join(" + ");
+                } else if (index < substances_before.length) {
+                    substances_before.splice(Math.max(index - 1, 0), 0, substances_before.splice(index, 1));
+                    newEquation = substances_before.join(" + ") + " -> " + substances_after.join(" + ");
+                } else {
+                    substances_after.splice(index - 1 - substances_before.length, 0, substances_after.splice(index - substances_before.length, 1));
+                    newEquation = substances_before.join(" + ") + " -> " + substances_after.join(" + ");
+                }
+                showDetails(newEquation);
+            }
+
+            function searchInformationFromFormula(formula) {
+                let searchResults = substances_information.filter(v => v[0] == formula);
+                return [formula, searchResults.map(v => v[1]).join("；"), searchResults.map(v => v[2]).flat(1)];
+            }
+
+            function goToNextQuestion() {
+                if (isRandom) {
+                    let leftNumbers = [...Array(backup.length)].map((v, i) => i).filter(i => !numbersHistory.includes(i));
+                    if (leftNumbers.length == 0) {
+                        leftNumbers = [...Array(backup.length)].map((v, i) => i);
+                        numbersHistory.splice(0);
+                    }
+                    let nextNumber = leftNumbers[Math.trunc(Math.random() * leftNumbers.length)];
+                    description.innerHTML = backup[nextNumber][2].replaceAll("\\n", "<br>").replace(/\[(http.*?)\]/g, "<img src='$1' width='30' height='30'>");
+                    currentAnswer = backup[nextNumber][0];
+                    showDetails(isPractice ? " -> " : backup[nextNumber][0]);
+                    questionNumberDisplay.innerText = "#" + String(nextNumber);
+                    targetQuestionNumber = nextNumber;
+                    numbersHistory.push(nextNumber);
+                    progressBar.value = numbersHistory.length;
+                }
+                else {
+                    let nextNumber = (targetQuestionNumber + 1) % backup.length;
+                    if (hasEndIndex) {
+                        nextNumber = (startIndex === endIndex) ? nextNumber : (nextNumber === endIndex + 1) ? startIndex : nextNumber;
+                    }
+                    description.innerHTML = backup[nextNumber][2].replaceAll("\\n", "<br>").replace(/\[(http.*?)\]/g, "<img src='$1' width='30' height='30'>");
+                    currentAnswer = backup[nextNumber][0];
+                    showDetails(isPractice ? " -> " : backup[nextNumber][0]);
+                    questionNumberDisplay.innerText = "#" + String(nextNumber);
+                    targetQuestionNumber = nextNumber;
+                    if (numbersHistory.length === progressBar.max) {
+                        numbersHistory.splice(0);
+                    }
+                    numbersHistory.push(nextNumber);
+                    progressBar.value = numbersHistory.length;
+                }
+                vertifyEquation();
+            }
+
+            function searchAnything(text) {
+                while (searchResultArea.firstChild) {
+                    searchResultArea.removeChild(searchResultArea.firstChild);
+                }
+                if (text.length == 0) return;
+                let source = [...substances_information.map(value => [value[0] + " " + value[1]]), ...backup.map((value, index) => [[value[0], index], [value[1].replaceAll(/\[.+\]/g, ""), index], [value[2].replaceAll(/\[.+\]/g, ""), index]]).flat(1)];
+                let extracted = [];
+                let chunks = [...text.split("").filter(v => v != ""), ...[...Array(text.length - 1)].map((v, i) => text.substring(i, i+2)), ...[...Array(text.length - 2 > 0 ? text.length - 2 : 0)].map((v, i) => text.substring(i, i+3)), ...[...Array(text.length - 3 > 0 ? text.length - 3 : 0)].map((v, i) => text.substring(i, i+4)), ...[...Array(text.length - 4 > 0 ? text.length - 4 : 0)].map((v, i) => text.substring(i, i+5))];
+                for (let candidate of source) {
+                    let matchCount = 0;
+                    for (let chunk of chunks) {
+                        let matches = (candidate[0].split(chunk).length - 1) * Math.pow(chunk.length, 2);
+                        matchCount += matches;
+                    }
+                    if (matchCount > Math.pow(text.length, 2)) extracted.push([matchCount, ...candidate]);
+                }
+                for (let candidate of extracted.sort((a, b) => b[0] - a[0])) {
+                    let newDiv = document.createElement("div");
+                    newDiv.innerHTML = candidate[1].replaceAll("\\n", "<br>");
+                    newDiv.setAttribute("data-id", candidate.length == 3 ? candidate[2] : -1);
+                    if (candidate.length == 2) newDiv.onclick = () => { showSubstancePreview(candidate[1].split(" ")[0]) };
+                    else newDiv.onclick = () => { showEquationOfSerachingResultOnNewTab(Number(newDiv.getAttribute("data-id"))) };
+                    searchResultArea.appendChild(newDiv);
+                }
+            }
+
+            function showSearchingForm() {
+                hiddenSubstanceSearch.style.display = "";
+                hiddenSearch.style.display = hiddenSearch.style.display == "block" ? "" : "block";
+            }
+
+            async function showSubstancePreview(formula) {
+                hiddenSubstancePreview.style.display = "";
+                while (hiddenSubstancePreview.querySelector("img")) {
+                    hiddenSubstancePreview.querySelector("img").remove();
+                }
+                let information = searchInformationFromFormula(formula);
+                let previewFormula = hiddenSubstancePreview.querySelector("#preview-formula");
+                previewFormula.innerText = "$\\ce{" + information[0] + "}$";
+                MathJax.typesetClear([previewFormula]);
+                await MathJax.typesetPromise([previewFormula]);
+                hiddenSubstancePreview.querySelector("#preview-name").innerText = information[1];
+                for (let url of information[2]) {
+                    let newImg = document.createElement("img");
+                    newImg.src = url;
+                    hiddenSubstancePreview.querySelector(".substance_box").appendChild(newImg);
+                }
+            }
+
+            function closeSubstancePreview() {
+                hiddenSubstancePreview.style.display = "none";
+            }
+
+            function removeSubstanceFromList(index) {
+                let before_after = currentEquation.split("->");
+                let substances_before = before_after[0].split(/ \+ /g).map(v => v.replaceAll(" ", "")).filter(v => v != "");
+                let substances_after = before_after[1].split(/ \+ /g).map(v => v.replaceAll(" ", "")).filter(v => v != "");
+                let newEquation;
+                if (index < substances_before.length) substances_before.splice(index, 1);
+                else substances_after.splice(index - substances_before.length, 1);
+                newEquation = substances_before.join(" + ") + " -> " + substances_after.join(" + ");
+                showDetails(newEquation);
+            }
+
+            function appendSubstanceBefore(formula) {
+                let before_after = currentEquation.split("->");
+                let substances_before = before_after[0].split(/ \+ /g).map(v => v.replaceAll(" ", "")).filter(v => v != "");
+                let substances_after = before_after[1].split(/ \+ /g).map(v => v.replaceAll(" ", "")).filter(v => v != "");
+                let newEquation;
+                substances_before.push(formula);
+                newEquation = substances_before.join(" + ") + " -> " + substances_after.join(" + ");
+                showDetails(newEquation);
+                currentEquation = newEquation;
+            }
+
+            function appendSubstanceAfter(formula) {
+                let before_after = currentEquation.split("->");
+                let substances_before = before_after[0].split(/ \+ /g).map(v => v.replaceAll(" ", "")).filter(v => v != "");
+                let substances_after = before_after[1].split(/ \+ /g).map(v => v.replaceAll(" ", "")).filter(v => v != "");
+                let newEquation;
+                substances_after.push(formula);
+                newEquation = substances_before.join(" + ") + " -> " + substances_after.join(" + ");
+                showDetails(newEquation);
+                currentEquation = newEquation;
+            }
+
+            function showSubstanceSearchingForm(isToBefore) {
+                document.querySelector("#search2").value = "";
+                isGoingToAppendBefore = isToBefore;
+                hiddenSearch.style.display = "";
+                hiddenSubstanceSearch.style.display = hiddenSubstanceSearch.style.display == "block" ? "" : "block";
+            }
+
+            function searchSubstanceCandidates(text) {
+                while (searchSubstanceResultArea.firstChild) {
+                    searchSubstanceResultArea.removeChild(searchSubstanceResultArea.firstChild);
+                }
+                if (text.length == 0) return;
+                let source = substances_information.map(value => [value[0] + " " + value[1]]);
+                let extracted = [];
+                let chunks = [...[...Array(text.length - 1)].map((v, i) => text.substring(i, i+2)), ...[...Array(text.length - 2 > 0 ? text.length - 2 : 0)].map((v, i) => text.substring(i, i+3)), ...[...Array(text.length - 3 > 0 ? text.length - 3 : 0)].map((v, i) => text.substring(i, i+4)), ...[...Array(text.length - 4 > 0 ? text.length - 4 : 0)].map((v, i) => text.substring(i, i+5))];
+                for (let candidate of source) {
+                    let matchCount = 0;
+                    for (let chunk of chunks) {
+                        let matches = candidate[0].split(chunk).length - 1;
+                        matchCount += matches;
+                    }
+                    if (candidate[0].match(text)) matchCount += 10;
+                    if (matchCount > 0) extracted.push([matchCount, ...candidate]);
+                }
+                for (let candidate of extracted.sort((a, b) => b[0] - a[0])) {
+                    let newDiv = document.createElement("div");
+                    newDiv.innerHTML = candidate[1];
+                    newDiv.onclick = () => { showSubstanceSelector(candidate[1].split(" ")[0]) };
+                    searchSubstanceResultArea.appendChild(newDiv);
+                }
+            }
+
+            async function showSubstanceSelector(formula) {
+                hiddenSubstanceSelector.style.display = "";
+                while (hiddenSubstanceSelector.querySelector("img")) {
+                    hiddenSubstanceSelector.querySelector("img").remove();
+                }
+                let information = searchInformationFromFormula(formula);
+                let previewFormula = hiddenSubstanceSelector.querySelector("#preview-substance-formula");
+                previewFormula.innerText = "$\\ce{" + information[0] + "}$";
+                MathJax.typesetClear([previewFormula]);
+                await MathJax.typesetPromise([previewFormula]);
+                hiddenSubstanceSelector.querySelector("#preview-substance-name").innerText = information[1];
+                for (let url of information[2]) {
+                    let newImg = document.createElement("img");
+                    newImg.src = url;
+                    hiddenSubstanceSelector.querySelector(".substance_box").appendChild(newImg);
+                }
+                hiddenSubstanceSelector.querySelector(".substance_box").onclick = () => {
+                    closeSearchingSubstanceForm();
+                    if (isGoingToAppendBefore) appendSubstanceBefore(formula);
+                    else appendSubstanceAfter(formula);
+                };
+            }
+
+            function closeSearchingSubstanceForm() {
+                hiddenSubstanceSelector.style.display = "none";
+                hiddenSubstanceSearch.style.display = "";
+            }
+
+            function showCurrentAnswer() {
+                showDetails(currentAnswer);
+            }
+
+            function vertifyEquation() {
+                let current_before_after = currentEquation.split(" -> ");
+                let current_substances_before = current_before_after[0].split(/ \+ /g).filter(v => v != "").map(v => v.replaceAll(" ", ""));
+                let current_substances_after = current_before_after[1].split(/ \+ /g).filter(v => v != "").map(v => v.replaceAll(" ", ""));
+                let answer_before_after = currentAnswer.split(" -> ");
+                let answer_substances_before = answer_before_after[0].split(/ \+ /g).filter(v => v != "").map(v => v.replaceAll(" ", ""));
+                let answer_substances_after = answer_before_after[1].split(/ \+ /g).filter(v => v != "").map(v => v.replaceAll(" ", ""));
+                if (current_substances_before.filter(value => !answer_substances_before.includes(value)).length === 0 && answer_substances_before.filter(value => !current_substances_before.includes(value)).length === 0 && current_substances_after.filter(value => !answer_substances_after.includes(value)).length === 0 && answer_substances_after.filter(value => !current_substances_after.includes(value)).length === 0) {
+                    correctBar.style.display = "block";
+                    wrongBar.style.display = "none";
+                }
+                else {
+                    correctBar.style.display = "none";
+                    wrongBar.style.display = "block";
+                }
+            }
+        </script>
+    </body>
+</html>
