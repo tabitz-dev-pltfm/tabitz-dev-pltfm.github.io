@@ -3,6 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+        <link rel="icon" href="chemistry_icon.png">
+        <link rel="apple-touch-icon" href="chemistry_icon.png">
         <title>化学反応式の演習ツール</title>
         <style>
             body {
@@ -390,7 +392,7 @@
                 while (list.firstChild) {
                     list.removeChild(list.firstChild);
                 }
-                let before_after = equation.split("->");
+                let before_after = equation.split(" -> ");
                 let substances_before = before_after[0].split(/ \+ /g).map(v => v.replaceAll(" ", "").replace(/^[0-9]+/g, "")).filter(v => v != "");
                 let substances_after = before_after[1].split(/ \+ /g).map(v => v.replaceAll(" ", "").replace(/^[0-9]+/g, "")).filter(v => v != "");
                 let coefficient_before = before_after[0].split(/ \+ /g).filter(v => v != "").map(v => v.replaceAll(" ", "").match(/^[0-9]+/g) ? Number(v.replaceAll(" ", "").match(/^[0-9]+/g)[0]) : 1);
@@ -472,9 +474,18 @@
 
             async function changeCoefficientNumber(index, changeTo) {
                 if (changeTo < 1) return;
-                let substances = currentEquation.split(/ \+ | -> /g).map(v => v.replaceAll(" ", "").replace(/^[0-9]+/g, "")).filter(v => v != "");
-                let coefficient = currentEquation.split(/ \+ | -> /g).map(v => v.replaceAll(" ", "")).filter(v => v != "").map(v => v.match(/^[0-9]+/g) ? Number(v.match(/^[0-9]+/g)[0]) : 1);
-                let newEquation = currentEquation.replace((coefficient[index] == 1 ? "" : String(coefficient[index]))+substances[index], (changeTo == 1 ? "" : String(changeTo))+substances[index]);
+                let before_after = currentEquation.split(" -> ");
+                let substances_before = before_after[0].split(/ \+ /g).map(v => v.replaceAll(" ", "")).filter(v => v != "");
+                let substances_after = before_after[1].split(/ \+ /g).map(v => v.replaceAll(" ", "")).filter(v => v != "");
+                let coefficient_before = before_after[0].split(/ \+ /g).filter(v => v != "").map(v => v.replaceAll(" ", "").match(/^[0-9]+/g) ? Number(v.replaceAll(" ", "").match(/^[0-9]+/g)[0]) : 1);
+                let coefficient_after = before_after[1].split(/ \+ /g).filter(v => v != "").map(v => v.replaceAll(" ", "").match(/^[0-9]+/g) ? Number(v.replaceAll(" ", "").match(/^[0-9]+/g)[0]) : 1);
+                if (index < substances_before.length) {
+                    substances_before[index] = substances_before[index].replace(new RegExp("^" + (coefficient_before[index] == 1 ? "" : String(coefficient_before[index])), "g"), (changeTo == 1 ? "" : String(changeTo)));
+                }
+                else {
+                    substances_after[index - substances_before.length] = substances_after[index - substances_before.length].replace(new RegExp("^" + (coefficient_after[index - substances_before.length] == 1 ? "" : String(coefficient_after[index - substances_before.length])), "g"), (changeTo == 1 ? "" : String(changeTo)));
+                }
+                let newEquation = substances_before.join(" + ") + " -> " + substances_after.join(" + ");
                 currentEquation = newEquation;
                 container.innerHTML = "$\\ce{" + currentEquation + "}$";
                 MathJax.typesetClear([container]);
