@@ -1,0 +1,42 @@
+// 化学反応式の情報の記入方法：
+// 化学反応式 | 化学反応式上の物質名[画像URL（複数のときは間に空白）]（同じ順番）| 化学反応の概要
+// NaCl + H2O + CO2 + NH3 -> NaHCO3 + NH4Cl | 塩化ナトリウム[https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Selpologne.jpg/500px-Selpologne.jpg], 水[https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Water_droplet_blue_bg05.jpg/500px-Water_droplet_blue_bg05.jpg], 二酸化炭素[https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Carbon-dioxide-3D-vdW.png/500px-Carbon-dioxide-3D-vdW.png], アンモニア[https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Ammonia-3D-vdW.png/250px-Ammonia-3D-vdW.png], 炭酸水素ナトリウム[https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Sodium_bicarbonate.jpg/960px-Sodium_bicarbonate.jpg], 塩化アンモニウム[https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Ammoniumchlorid_Kristalle.jpg/500px-Ammoniumchlorid_Kristalle.jpg] | 炭酸水素ナトリウムの製法
+// すでに出現している物質名を再度書かずに省略する場合はシャープで代用する：
+// 2NaHCO3 -> Na2CO3 + CO2 + H2O | #, 炭酸ナトリウム[https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Uhli%C4%8Ditan_sodn%C3%BD.JPG/500px-Uhli%C4%8Ditan_sodn%C3%BD.JPG], #, # | 炭酸水素ナトリウムの分解反応
+
+//水素
+Zn + H2SO4 -> ZnSO4 + H2 | 亜鉛[https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Zinc_fragment_sublimed_and_1cm3_cube.jpg/960px-Zinc_fragment_sublimed_and_1cm3_cube.jpg], 硫酸[https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Sulphuric_acid_96_percent_extra_pure.jpg/330px-Sulphuric_acid_96_percent_extra_pure.jpg], 硫酸亜鉛[https://upload.wikimedia.org/wikipedia/commons/b/bb/Zinc_Sulfate.jpg], 水素[https://ene.osakagas.co.jp/media/column/__icsFiles/afieldfile/2025/06/10/pt.webp] | 亜鉛に希硫酸を加える
+CH4 + H2O -> CO + 3H2 | メタン[https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Methane-3D-space-filling.svg/250px-Methane-3D-space-filling.svg.png], 水[https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Water_droplet_blue_bg05.jpg/500px-Water_droplet_blue_bg05.jpg], 一酸化炭素[https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Carbon-monoxide-3D-balls.png/250px-Carbon-monoxide-3D-balls.png], # | Ni[https://upload.wikimedia.org/wikipedia/commons/5/57/Nickel_chunk.jpg]触媒下で、天然ガスと水蒸気を反応させる
+2H2 + O2 -> 2H2O | #, 酸素[https://jp.images-monotaro.com/Monotaro3/pi/highreso/mono68367093-210922-02.jpg], # | 水素と酸素の混合機体に点火すると、爆発的に反応する
+CuO + H2 -> Cu + H2O | 酸化銅(Ⅱ)[https://upload.wikimedia.org/wikipedia/commons/f/fa/CopperIIoxide.jpg], #, 銅[https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/NatCopper.jpg/960px-NatCopper.jpg], # | 加熱した酸化銅(Ⅱ)を水素が還元させる
+
+//ハロゲン
+F2 + 2e- -> 2F- | #, 電子[https://thumb.ac-illust.com/5c/5c791668f4e7398f78aabfa2010109f7_t.jpeg], フッ化物イオン | フッ素は還元しやすい（酸化力が強い）
+2F2 + 2H2O -> 4HF + O2 | フッ素[https://upload.wikimedia.org/wikipedia/commons/9/91/Liquid_fluorine_tighter_crop.jpg], #, フッ化水素[https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Hydrogen-fluoride-3D-vdW.svg/250px-Hydrogen-fluoride-3D-vdW.svg.png], # | フッ素は水と激しく反応する
+
+CaCl(ClO)*H2O + 2HCl -> CaCl2 + Cl2 + 2H2O | さらし粉（次亜塩素酸カルシウム）[https://www.chemategroup.com/wp-content/uploads/2021/05/Calcium-Hypochlorite-CHC.jpg], 塩化水素[https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Hydrochloric_acid_30_percent.jpg/330px-Hydrochloric_acid_30_percent.jpg], 塩化カルシウム[https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Calcium_chloride.jpg/500px-Calcium_chloride.jpg], 塩素[https://upload.wikimedia.org/wikipedia/commons/f/f4/Chlorine_ampoule.jpg], # |さらし粉に濃塩酸を加える
+MnO2 + 4H+ + 2e- -> Mn^2+ + 2H2O | #, #, #, マンガンイオン, # | 酸化剤である酸化マンガン（Ⅳ）（半反応式）
+2Cl- -> Cl2 + 2e- | 塩化物イオン, #, # | 還元剤である塩化物イオン（半反応式）
+MnO2 + 4HCl -> MnCl2 + Cl2 + 2H2O | 酸化マンガン(Ⅳ)[https://upload.wikimedia.org/wikipedia/commons/3/35/Manganese%28IV%29_oxide.jpg], #, 塩化マンガン[https://upload.wikimedia.org/wikipedia/commons/4/48/Manganous_chloride_anh.jpg], #, # | 酸化マンガン(Ⅳ)に濃塩酸を加える
+
+Cl2 + H2O -> HCl + HClO | #, #, #, 次亜塩素酸[https://img07.shop-pro.jp/PA01409/043/product/152783626.jpg?cmsp_timestamp=20200816162358] | 塩素は水に少し溶けて塩素水となり、その一部は塩酸と次亜塩素酸になる。\n※次亜塩素酸は酸化力があり、漂白作用や殺菌作用がある。
+Cl2 + 2KI -> 2KCl + I2 | #, ヨウ化カリウム[https://www.viatris-e-channel.com/viatris-products/di/detail/assetfile/vd01photo1.jpg], 塩化カリウム[https://upload.wikimedia.org/wikipedia/commons/7/7b/Potassium_chloride.jpg], ヨウ素[https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Iodinecrystals.JPG/960px-Iodinecrystals.JPG https://i-joshi.com/data/202505/img681c5e8557c48.jpg] | 塩素の検出法（ヨウ化カリウムデンプン紙[https://hitoridedeki.wp-x.jp/wp-content/uploads/2019/01/O3KIdenpun.jpg]を青紫色に変える）
+
+MnO4- + 8H+ + 5e- -> Mn^2+ + 4H2O | 過マンガン酸イオン, #, #, #, # | 酸化剤である過マンガン酸イオン（半反応式）
+ClO- + 2H+ + 2e- -> Cl- + H2O | 次亜塩素酸イオン, #, #, #, #, # | 酸化剤である次亜塩素酸イオン（半反応式）
+O3 + 2H+ + 2e- -> O2 + H2O | オゾン[https://www.eiken-techno.co.jp/jpg/OZONE100ppm.jpg], #, #, #, # | 酸性溶液中で酸化剤としてはたらくオゾン（半反応式）
+O3 + H2O + 2e- -> O2 + 2OH- | #, #, #, #, 水酸化物イオン | 中性・塩基性溶液中で酸化剤としてはたらくオゾン（半反応式）
+Ca(ClO)2*2H2O + 4HCl -> 2Cl2 + 4H2O + CaCl2 | 高度さらし粉[https://makeshop-multi-images.akamaized.net/enso/shopimages/95/05/1_000000000595.jpg?1769501349], #, #, #, # | 高度さらし粉に濃塩酸を加える
+
+CaF2 + H2SO4 -> CaSO4 + 2HF | ホタル石[https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/FluoriteValzergueFillonjaune.jpg/500px-FluoriteValzergueFillonjaune.jpg], #, 硫酸カルシウム[https://upload.wikimedia.org/wikipedia/commons/a/a7/Calcium_sulfate_hemihydrate.jpg], # | ホタル石と濃硫酸を加熱する
+SiO2 + 6HF -> H2SiF6 + 2H2O | 二酸化ケイ素[https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Quartz_Br%C3%A9sil.jpg/500px-Quartz_Br%C3%A9sil.jpg], #, ヘキサフルオロケイ酸[https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Hexafluorosilicic_acid_molecular_structure.png/500px-Hexafluorosilicic_acid_molecular_structure.png], # | フッ化水素酸は石英やガラスを溶かす。\n※そのため、フッ化水素酸はプラスチック（ポリエステル）の容器に保存する。
+NaCl + H2SO4 -> NaHSO4 + HCl | 塩化ナトリウム[https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Selpologne.jpg/500px-Selpologne.jpg], #, 硫酸水素ナトリウム[https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Sodium_Bisulfate.jpg/330px-Sodium_Bisulfate.jpg], # | 塩化ナトリウムに濃硫酸を加えて加熱する。\n※濃硫酸は不揮発性の酸である。
+NH3 + HCl -> NH4Cl | アンモニア[https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Ammonia-3D-vdW.png/250px-Ammonia-3D-vdW.png], #, 塩化アンモニウム[https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Ammoniumchlorid_Kristalle.jpg/500px-Ammoniumchlorid_Kristalle.jpg] | アンモニアに塩化水素をかけると白煙が生じる
+Ag+ + HCl -> AgCl + H+ | 銀イオン, #, 塩化銀, 水素イオン | 銀イオンを含む水溶液と塩酸の反応
+CaO + 2HCl -> CaCl2 + H2O | 酸化カルシウム[https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Calcium_oxide_powder.JPG/500px-Calcium_oxide_powder.JPG], #, #, # | 塩化水素は酸化カルシウムなどの酸化物とよく反応する
+
+//酸素族元素
+2H2O2 -> 2H2O + O2 | 過酸化水素, #, # | 過酸化水素水に酸化マンガン（Ⅳ）[https://upload.wikimedia.org/wikipedia/commons/3/35/Manganese%28IV%29_oxide.jpg]を加える
+2KClO3 -> 2KCl + 3O2 | 塩素酸カリウム, #, # | 塩素酸カリウムに酸化マンガン（Ⅳ）[https://upload.wikimedia.org/wikipedia/commons/3/35/Manganese%28IV%29_oxide.jpg]を加えて加熱する
+3O2 -> 2O3 | #, # | 酸素に紫外線を当てて無声放電を行う
+2KI + O3 + H2O -> 2KOH + O2 + I2 | #, #, #, 水酸化カリウム, #, # | オゾンの検出法（ヨウ化カリウムデンプン紙[https://hitoridedeki.wp-x.jp/wp-content/uploads/2019/01/O3KIdenpun.jpg]を青紫色に変える）
