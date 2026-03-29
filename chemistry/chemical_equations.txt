@@ -41,7 +41,7 @@ CaO + 2HCl -> CaCl2 + H2O | 酸化カルシウム[https://upload.wikimedia.org/w
 3O2 -> 2O3 | #, # | 酸素に紫外線を当てて無声放電を行う
 2KI + O3 + H2O -> 2KOH + O2 + I2 | #, #, #, 水酸化カリウム, #, # | オゾンの検出法（ヨウ化カリウムデンプン紙[https://hitoridedeki.wp-x.jp/wp-content/uploads/2019/01/O3KIdenpun.jpg]を青紫色に変える）
 
-Na2O + H2O -> 2NaOH | 酸化ナトリウム, #, # | ナトリウムの酸化物を水に溶かす
+Na2O + H2O -> 2NaOH | 酸化ナトリウム, #, 水酸化ナトリウム | ナトリウムの酸化物を水に溶かす
 CuO + H2SO4 -> CuSO4 + H2O | 酸化銅, #, 硫化銅, # | 銅の酸化物を硫酸に溶かす
 SO2 + H2O -> H2SO3 | 二酸化硫黄[https://sawanii.ne.jp/wp-content/uploads/2019/12/%E4%BA%8C%E9%85%B8%E5%8C%96%E7%A1%AB%E9%BB%84-1024x678.jpg], #, 亜硫酸[https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Sulfurous-acid-3D-balls.png/500px-Sulfurous-acid-3D-balls.png] | 硫黄の酸化物を水に溶かす
 CO2 + Ca(OH)2 -> CaCO3 + H2O | 二酸化炭素[https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Carbon-dioxide-3D-vdW.png/500px-Carbon-dioxide-3D-vdW.png], 水酸化カルシウム[https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Calcium_hydroxide.jpg/500px-Calcium_hydroxide.jpg], 炭酸カルシウム[https://upload.wikimedia.org/wikipedia/commons/0/04/Calcium_carbonate.jpg], # | 炭素の酸化物を水酸化カルシウム水溶液に溶かす
