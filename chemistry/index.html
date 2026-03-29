@@ -557,7 +557,7 @@
                 else {
                     let nextNumber = (targetQuestionNumber + 1) % backup.length;
                     if (hasEndIndex) {
-                        nextNumber = (startIndex === endIndex) ? nextNumber : (nextNumber === endIndex + 1) ? startIndex : nextNumber;
+                        nextNumber = (startIndex === endIndex) ? nextNumber : (nextNumber === endIndex + 1) ? startIndex : (endIndex === backup.length - 1 && nextNumber === 0) ? startIndex : nextNumber;
                     }
                     description.innerHTML = backup[nextNumber][2].replaceAll("\\n", "<br>").replace(/\[(http.*?)\]/g, "<img src='$1' width='30' height='30'>");
                     currentAnswer = backup[nextNumber][0];
