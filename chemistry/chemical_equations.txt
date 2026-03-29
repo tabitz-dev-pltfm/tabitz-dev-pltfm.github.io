@@ -40,3 +40,16 @@ CaO + 2HCl -> CaCl2 + H2O | 酸化カルシウム[https://upload.wikimedia.org/w
 2KClO3 -> 2KCl + 3O2 | 塩素酸カリウム, #, # | 塩素酸カリウムに酸化マンガン（Ⅳ）[https://upload.wikimedia.org/wikipedia/commons/3/35/Manganese%28IV%29_oxide.jpg]を加えて加熱する
 3O2 -> 2O3 | #, # | 酸素に紫外線を当てて無声放電を行う
 2KI + O3 + H2O -> 2KOH + O2 + I2 | #, #, #, 水酸化カリウム, #, # | オゾンの検出法（ヨウ化カリウムデンプン紙[https://hitoridedeki.wp-x.jp/wp-content/uploads/2019/01/O3KIdenpun.jpg]を青紫色に変える）
+
+Na2O + H2O -> 2NaOH | 酸化ナトリウム, #, # | ナトリウムの酸化物を水に溶かす
+CuO + H2SO4 -> CuSO4 + H2O | 酸化銅, #, 硫化銅, # | 銅の酸化物を硫酸に溶かす
+SO2 + H2O -> H2SO3 | 二酸化硫黄[https://sawanii.ne.jp/wp-content/uploads/2019/12/%E4%BA%8C%E9%85%B8%E5%8C%96%E7%A1%AB%E9%BB%84-1024x678.jpg], #, 亜硫酸[https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Sulfurous-acid-3D-balls.png/500px-Sulfurous-acid-3D-balls.png] | 硫黄の酸化物を水に溶かす
+CO2 + Ca(OH)2 -> CaCO3 + H2O | 二酸化炭素[https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Carbon-dioxide-3D-vdW.png/500px-Carbon-dioxide-3D-vdW.png], 水酸化カルシウム[https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Calcium_hydroxide.jpg/500px-Calcium_hydroxide.jpg], 炭酸カルシウム[https://upload.wikimedia.org/wikipedia/commons/0/04/Calcium_carbonate.jpg], # | 炭素の酸化物を水酸化カルシウム水溶液に溶かす
+Al2O3 + 6HCl -> 2AlCl3 + 3H2O | 酸化アルミニウム, #, 塩化アルミニウム, # | アルミニウムの酸化物を塩酸に溶かす
+Al2O3 + 2NaOH + 3H2O -> 2Na[Al(OH)4] | #, #, #, テトラヒドロキシドアルミン酸ナトリウム | 酸化アルミニウムを水酸化ナトリウム水溶液に溶かす
+
+S + O2 -> SO2 | 硫黄, #, # | 硫黄は空気中で青白い炎をあげて燃焼する[https://sciyoji.site/wp-content/uploads/2020/10/h2s_media_2.jpg]
+FeS + H2SO4 -> FeSO4 + H2S | 硫化鉄（Ⅱ）[https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Iron%28II%29-sulfide-sample.jpg/500px-Iron%28II%29-sulfide-sample.jpg], #, 硫酸鉄[https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Iron%28II%29-sulfate-heptahydrate-sample.jpg/500px-Iron%28II%29-sulfate-heptahydrate-sample.jpg], 硫化水素[https://www.kojundo.blog/cp-bin/wordpress/wp-content/uploads/2019/07/83f45a2fc28763e10868580e79be132a-e1562136216197.jpg] | 硫化鉄（Ⅱ）に希硫酸を加える（キップの装置[https://kotobank.jp/image/dictionary/daijisen/media/105140.jpg]を用いる）
+Cu^2+ + H2S -> CuS　+ 2H+ | 銅イオン, #, #, # | 銅イオンを硫化水素水に溶かすと、特有の色、性質を持った金属硫化物が沈澱する
+H2S -> S + 2H+ + 2e- | #, #, #, # | 還元剤である硫化水素（半反応式）
+
