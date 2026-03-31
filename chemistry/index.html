@@ -375,7 +375,7 @@
                 const wait = setInterval(() => {
                     if (typeof MathJax.typesetClear !== "undefined" && typeof MathJax.typesetPromise !== "undefined") {
                         clearInterval(wait);
-                        description.innerHTML = backup[targetQuestionNumber][2].replaceAll("\\n", "<br>").replace(/\[(http.*?)\]/g, "<img src='$1' width='30' height='30'>");
+                        description.innerHTML = backup[targetQuestionNumber][2].replaceAll("\\n", "<br>").replace(/\[(http.*?)\]/g, "<img src='$1' width='50' height='50'>");
                         currentAnswer = backup[targetQuestionNumber][0];
                         showDetails(isPractice ? " -> " : backup[targetQuestionNumber][0]);
                         questionNumberDisplay.innerText = "#" + String(targetQuestionNumber);
@@ -559,7 +559,7 @@
                     if (hasEndIndex) {
                         nextNumber = (startIndex === endIndex) ? nextNumber : (nextNumber === endIndex + 1) ? startIndex : (endIndex === backup.length - 1 && nextNumber === 0) ? startIndex : nextNumber;
                     }
-                    description.innerHTML = backup[nextNumber][2].replaceAll("\\n", "<br>").replace(/\[(http.*?)\]/g, "<img src='$1' width='30' height='30'>");
+                    description.innerHTML = backup[nextNumber][2].replaceAll("\\n", "<br>").replace(/\[(http.*?)\]/g, "<img src='$1' width='50' height='50'>");
                     currentAnswer = backup[nextNumber][0];
                     showDetails(isPractice ? " -> " : backup[nextNumber][0]);
                     questionNumberDisplay.innerText = "#" + String(nextNumber);
