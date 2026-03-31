@@ -53,3 +53,23 @@ FeS + H2SO4 -> FeSO4 + H2S | 硫化鉄（Ⅱ）[https://upload.wikimedia.org/wik
 Cu^2+ + H2S -> CuS + 2H+ | 銅（Ⅱ）イオン, #, 硫化銅（Ⅱ）[https://image.mono.ipros.com/public/product/image/939/2000588776/IPROS20466123335601457106.png], # | 銅イオンを硫化水素水に溶かすと、特有の色、性質を持った金属硫化物が沈澱する
 H2S -> S + 2H+ + 2e- | #, #, #, # | 還元剤である硫化水素（半反応式）
 
+S + O2 -> SO2 | #, #, # | 硫黄の燃焼
+2NaHSO3 + H2SO4 -> Na2SO4 + 2SO2 + 2H2O | 亜硫酸水素ナトリウム[https://chiyousei.co.jp/wp-content/uploads/2023/11/Sodium_bisulfite.jpg], #, 硫酸ナトリウム[https://upload.wikimedia.org/wikipedia/commons/8/86/Sodium_sulfate.jpg], #, # | 亜硫酸水素ナトリウムに希硫酸を加える
+Cu + 2H2SO4 -> CuSO4 + 2SO2 + 2H2O | #, #, #, #, # | 銅に濃硫酸を加えて加熱する。（水素が発生しない例外的反応）
+S + O2 -> SO2 | #, #, # | 接触法のステップ①
+2SO2 + O2 -> 2SO3 | #, #, 三酸化硫黄[https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Schwefeltrioxid_Ampulle.jpg/500px-Schwefeltrioxid_Ampulle.jpg] | 接触法のステップ②\n触媒：酸化バナジウム（Ⅴ）　V2O5[https://www.kojundo.net/client_info/KOJUNDO/itemimage/VVO12PB_ASK/VVO12PB.jpg]
+SO3 + H2O -> H2SO4 | #, #, # | 接触法のステップ③（濃硫酸が完成）
+
+C12H22O11 -> 12C + 11H2O | マルトース[https://kawashima-ya.jp/contents/wp-content/uploads/2021/02/image7-7.jpg https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Maltose2.svg/500px-Maltose2.svg.png], 炭素[https://upload.wikimedia.org/wikipedia/commons/4/4b/Diamond-and-graphite-with-scale.jpg https://www.ashizawa.com/nanoparticles/wp-content/uploads/2022/09/CNT1-scaled.jpg https://upload.wikimedia.org/wikipedia/commons/8/82/Fullerene-C60.png], # | 濃硫酸が麦芽糖に脱水作用をする\n（濃硫酸は強力な乾燥剤）
+Fe + H2SO4 -> FeSO4 + H2 | 鉄[https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Iron_electrolytic_and_1cm3_cube.jpg/960px-Iron_electrolytic_and_1cm3_cube.jpg], #, #, # | 希硫酸は酸化力が弱いので、鉄のようにイオン化傾向が水素より大きい金属とのみ反応する。
+BaCl2 + H2SO4 -> BaSO4 + 2HCl | 塩化バリウム[https://upload.wikimedia.org/wikipedia/commons/6/6d/Barium_chloride.jpg], #, 硫酸バリウム[https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Barium-sulfate-2D.png/500px-Barium-sulfate-2D.png], # | 希硫酸を塩化バリウム水溶液に加えると、白色沈澱を生じる。
+
+//窒素族元素
+NH4NO2 -> N2 + 2H2O | 亜硝酸アンモニウム[https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Ammonium_nitrite.svg/500px-Ammonium_nitrite.svg.png], 窒素[https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Liquid_nitrogen_dsc04496.jpg/960px-Liquid_nitrogen_dsc04496.jpg], # | 窒素の製法（熱分解）
+3Cu + 8HNO3 -> 3Cu(NO3)2 + 4H2O + 2NO | #, 硝酸[https://upload.wikimedia.org/wikipedia/commons/1/14/White_Fuming_Nitric_Acid.png], 硝酸銅（Ⅱ）[https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Copper%28II%29-nitrate-trihydrate-sample.jpg/500px-Copper%28II%29-nitrate-trihydrate-sample.jpg], #, 一酸化窒素[https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Nitric-oxide-2D.svg/250px-Nitric-oxide-2D.svg.png] | 銅を希硝酸に溶かす\n（水素が発生しない例外的反応）
+2NO + O2 -> 2NO2 | #, #, 二酸化窒素[https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Nitrogen-dioxide-2D-dimensions-vector.svg/250px-Nitrogen-dioxide-2D-dimensions-vector.svg.png] | 一酸化窒素は空気中で酸素と容易に反応し、酸化される。
+Cu + 4HNO3 -> Cu(NO3)2 + 2H2O + 2NO2 | #, #, #, #, # | 銅を濃硝酸に溶かす\n（水素が発生しない例外的反応）
+
+N2 + 3H2 -> 2NH3 | #, #, # | ハーバー・ボッシュ法\n触媒：四酸化三鉄　Fe3O4[https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Fe3O4.JPG/500px-Fe3O4.JPG]
+2NH4Cl + Ca(OH)2 -> 2NH3 + 2H2O + CaCl2 | #, #, #, #, # | 塩化アンモニウムと水酸化カルシウムの混合物を加熱する\n（弱い塩基は元にもどる）
+2NH3 + CO2 -> (NH2)2CO + H2O | #, #, 尿素[https://www.shk-net.co.jp/wp/wp-content/uploads/2024/02/seiwa-coat_img11-e1707667886166.jpg], # | アンモニアと二酸化炭素から尿素（窒素肥料）を生成する
