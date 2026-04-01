@@ -680,7 +680,7 @@
                         let matches = candidate[0].split(chunk).length - 1;
                         matchCount += matches;
                     }
-                    if (candidate[0].match(text)) matchCount += 10;
+                    if (candidate[0].match(new RegExp(text.replaceAll(/(\(|\))/g, "\\$1")))) matchCount += 10;
                     if (matchCount > 0) extracted.push([matchCount, ...candidate]);
                 }
                 for (let candidate of extracted.sort((a, b) => b[0] - a[0])) {
