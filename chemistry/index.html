@@ -229,7 +229,12 @@
                     <div style="display: flex; justify-content: center; align-items: center;"><label for="search2">検索&emsp;</label><input id="search2" type="text" oninput="searchSubstanceCandidates(this.value)" /></div>
                     <a href="javascript:closeSearchingSubstanceForm()">追加をキャンセル ×</a>
                 </form>
-                <div style="display: flex; justify-content: center; align-items: center; background-color: green;"><div id="search-substance-result"></div></div>
+                <div style="display: flex; justify-content: center; align-items: center; background-color: green;">
+                    <div id="search-substance-result"></div>
+                </div>
+                <div style="display: flex; justify-content: space-evenly; background-color: green; margin-top: 5px;">
+                    <button onclick="appendSubstanceFromButton('H2O')">H2O</button><button onclick="appendSubstanceFromButton('H2SO4')">H2SO4</button><button onclick="appendSubstanceFromButton('H2')">H2</button><button onclick="appendSubstanceFromButton('H+')">H+</button><button onclick="appendSubstanceFromButton('e-')">e-</button>
+                </div>
             </div>
             <div id="hidden-substance-selector" style="display: none;">
                 <div class="substance_box" style="background-color: white"><p id="preview-substance-formula"></p><p id="preview-substance-name"></p></div>
@@ -738,6 +743,12 @@
                     correctBar.style.display = "none";
                     wrongBar.style.display = "block";
                 }
+            }
+
+            function appendSubstanceFromButton(formula) {
+                if (isGoingToAppendBefore) appendSubstanceBefore(formula);
+                else appendSubstanceAfter(formula);
+                closeSearchingSubstanceForm();
             }
         </script>
     </body>
