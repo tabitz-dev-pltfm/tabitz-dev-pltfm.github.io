@@ -105,3 +105,47 @@ Ca(HCO3)2 -> Ca^2+ + 2HCO3- | #, カルシウムイオン, 炭酸水素イオン
 SiO2 + 2NaOH -> Na2SiO3 + H2O | #, #, ケイ酸ナトリウム[https://www.fuji-chemical.com/assets/images/products/silicic_acid/products_silicic_acid_img_01.jpg], # | 二酸化ケイ素（酸性酸化物）は塩基と反応して、水ガラスが生じる\n※水ガラスはここでの２つの生成物の混合物質
 Na2SiO3 + 2HCl -> 2NaCl + H2SiO3 | #, #, #, ケイ酸[https://lh4.googleusercontent.com/proxy/-y-Lt4iYFikmZ5q0j3OaUBqt1RYaDrzGB29E_ccfAxHNZJw-FDZ0FTFHOCH9bTW6atTO6O361MKEc4YV3e6u3vrWeJ6OfcU4-MfHgPBwLq_iAbWz-cw] | ケイ酸ナトリウムの水溶液（水ガラス）に塩酸を加えるとゲル状の物質を生じる\n※それを加熱したものはシリカゲルと呼ばれ、乾燥剤として使用される
 
+//アルカリ金属
+2Na + 2H2O -> 2NaOH + H2 | #, #, #, # | ナトリウム（アルカリ金属）は空気中で酸化されやすく、室温で水と反応する。\nだから単体は石油[https://tonensyo.org/wp-content/uploads/2021/09/oil-2-1.png]の中に入れて保存する。
+2NaOH + CO2 -> Na2CO3 + H2O | #, #, #, # | 水酸化ナトリウムの性質として、二酸化炭素を吸収し、炭酸塩を生じる働きがある。\nだからゴム栓またはシリコン栓で保存する。[https://rikaniga.net/wp-content/uploads/2023/10/CIMG7244-scaled.jpg]
+
+NaCl + H2O + CO2 + NH3 -> NaHCO3 + NH4Cl | #, #, #, #, 炭酸水素ナトリウム[https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Sodium_bicarbonate.jpg/960px-Sodium_bicarbonate.jpg], # | アンモニアソーダ法（ソルベー法）　ステップ①
+2NaHCO3 -> Na2CO3 + CO2 + H2O | #, #, #, # | アンモニアソーダ法（ソルベー法）　ステップ②
+2NH4Cl + Ca(OH)2 -> CaCl2 + 2NH3 + 2H2O | #, #, #, #, # | アンモニアソーダ法（ソルベー法）　塩化アンモニウムのリサイクル
+CaCO3 -> CO2 + CaO | #, #, # | アンモニアソーダ法（ソルベー法）　二酸化炭素を作る
+CaO + H2O -> Ca(OH)2 | #, #, # | アンモニアソーダ法（ソルベー法）　酸化カルシウムのリサイクル
+Na2CO3 + 2HCl -> 2NaCl + CO2 + H2O | #, #, #, #, # | 炭酸ナトリウムと塩酸の反応
+Na2CO3*10H2O -> Na2CO3*H2O + 9H2O | #, #, # | 炭酸ナトリウムの風解
+NaCl + H2O + CO2 + NH3 -> NaHCO3 + NH4Cl | #, #, #, #, 重曹, # | 炭酸水素ナトリウムの製法
+2NaHCO3 -> Na2CO3 + CO2 + H2O | #, #, #, # | 炭酸水素ナトリウムの熱分解
+NaHCO3 + HCl -> NaCl + CO2 + H2O | #, #, #, #, # | 炭酸水素ナトリウムと塩酸の反応
+
+//2族元素（アルカリ土類金属を含む）
+Mg + 2H2O -> Mg(OH)2 + H2 | マグネシウム[https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Magnesium_crystals.jpg/960px-Magnesium_crystals.jpg], #, 水酸化マグネシウム[https://lh4.googleusercontent.com/proxy/RzHef6dOhdQ4NsaAC0lV_91KiVXORicgC7gzlANpwEyWyDbjA-O6dC5m0HlY8YvqAgtN7EQuRJ0y9t-0Muva6-dlpujlMas3N9SsGFCmPjsPb72a0VyFHbjd], # | マグネシウムは、常温の水とは反応しにくいが、熱水とは反応する
+2Mg + CO2 -> 2MgO + C | #, #, 酸化マグネシウム[https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Magnesium_oxide.jpg/500px-Magnesium_oxide.jpg], # | マグネシウムは二酸化炭素中でも激しく反応する
+Ca + 2H2O -> Ca(OH)2 + H2 | #, #, #, # | カルシウム（アルカリ土類金属）は常温で水と反応する
+Sr + 2H2O -> Sr(OH)2 + H2 | ストロンチウム[https://upload.wikimedia.org/wikipedia/commons/8/84/Strontium_1.jpg https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Flammenf%C3%A4rbungSr.png/330px-Flammenf%C3%A4rbungSr.png], #, 水酸化ストロンチウム[https://www.kojundo.net/client_info/KOJUNDO/itemimage/SRI08XB_ASK/SRI08XB.jpg], # | ストロンチウム（アルカリ土類金属）は常温で水と反応する
+Ba + 2H2O -> Ba(OH)2 + H2 | バリウム[https://upload.wikimedia.org/wikipedia/commons/1/16/Barium_unter_Argon_Schutzgas_Atmosph%C3%A4re.jpg], #, 水酸化バリウム[https://www.nippon-chem.co.jp/dcms_media/image/BaOH2_8.jpg], # | バリウム（アルカリ土類金属）は常温で水と反応する
+
+Ca(OH)2 + CO2 -> CaCO3 + H2O | #, #, #, # | 水酸化カルシウム水溶液（石灰水）に二酸化炭素を吹き込むと白濁する
+CaCO3 + H2O + CO2 -> Ca(HCO3)2 | 石灰石, #, #, # | 白濁した石灰水にさらに二酸化炭素を吹き込むと沈澱物が溶ける
+CaCO3 -> CaO + CO2 | #, 生石灰, # | 石灰石の熱分解
+CaCO3 + 2HCl -> CaCl2 + CO2 + H2O | #, #, #, #, # | 石灰石は塩酸（強酸）に溶ける
+CaCO3 -> CaO + CO2 | #, #, # | 生石灰の製法
+CaO + H2O -> Ca(OH)2 | #, #, 消石灰 | 生石灰に水を加えると、激しく発熱し、消石灰が生成する
+CaCl2 + 8NH3 -> CaCl2*8NH3 | #, #, 塩化カルシウムアンモノ化合物 | 塩化カルシウムは中性の乾燥剤であり、広く用いることができるが、アンモニアの乾燥には使えない。\n（アンモニアとの反応）
+
+//亜鉛族元素
+Zn + 2H2O -> Zn(OH)2 + H2 | #, #, 水酸化亜鉛[https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEbbld95gPpDmO9Sn8GgD0I0TygqgexVL_Qg&s], # | 亜鉛は高温の水蒸気と反応して水素を発生する
+Zn + 2HCl -> ZnCl2 + H2 | #, #, 塩化亜鉛[https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Zinc_chloride.jpg/500px-Zinc_chloride.jpg], # | 亜鉛は酸や強塩基と反応する両性元素である\n（酸との反応）
+Zn + 2NaOH + 2H2O -> Na2[Zn(OH)4] + H2 | #, #, #, テトラヒドロキシド亜鉛（Ⅱ）酸ナトリウム, # | 亜鉛は酸や強塩基と反応する両性元素である\n（強塩基との反応）
+ZnO + 2HCl -> ZnCl2 + H2O | 酸化亜鉛[https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Zinc_oxide.jpg/500px-Zinc_oxide.jpg], #, #, # | 酸化亜鉛は両性酸化物である\n（塩酸との反応）
+ZnO + 2NaOH + H2O -> Na2[Zn(OH)4] | #, #, #, # | 酸化亜鉛は両性酸化物である\n（水酸化ナトリウム水溶液との反応）
+Zn^2+ + 2OH- -> Zn(OH)2 | 亜鉛イオン, #, # | 亜鉛イオンを含む水溶液に塩基を加えると水酸化亜鉛の白色沈殿が生じる（イオン反応式）
+Zn(OH)2 + 2OH- -> [Zn(OH)4]2- | #, #, テトラヒドロキシド亜鉛（Ⅱ）酸イオン[https://www.sidaiigakubu.com/study-method/hirano-chemistry/70/img/image_1.png] | 水酸化亜鉛（両性酸化物）が強塩基に溶ける（イオン反応式）
+Zn(OH)2 + 2H+ -> Zn^2+ + 2H2O | #, #, #, # | 水酸化亜鉛（両性酸化物）が酸に溶ける（イオン反応式）
+Zn(OH)2 + 4NH3 -> [Zn(NH3)4]^2+ + 2OH- | #, #, テトラアンミン亜鉛（Ⅱ）イオン[https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/%E3%83%86%E3%83%88%E3%83%A9%E3%82%A2%E3%83%B3%E3%83%9F%E3%83%B3%E4%BA%9C%E9%89%9B%E3%82%A4%E3%82%AA%E3%83%B3.svg/960px-%E3%83%86%E3%83%88%E3%83%A9%E3%82%A2%E3%83%B3%E3%83%9F%E3%83%B3%E4%BA%9C%E9%89%9B%E3%82%A4%E3%82%AA%E3%83%B3.svg.png], # | 水酸化亜鉛がアンモニアに溶ける反応
+Zn^2+ + H2S -> ZnS + 2H+ | #, #, 硫化亜鉛[https://upload.wikimedia.org/wikipedia/commons/e/e2/Zinc_sulfide-edit.jpg], # | 亜鉛イオンを含む中性〜塩基性の水溶液に硫化水素を通じると白色沈殿が生じる
+Hg^2+ + H2S -> HgS + 2H+ | 水銀（Ⅱ）イオン, #, 硫化水銀[https://www.kenkengems.com/apps/note/wp-content/uploads/2024/01/dreamstime_l_150527440-scaled.jpg https://www.bunka.pref.mie.lg.jp/rekishi/kenshi/asp/shijyo/20100420_604_15_file.jpg], # | 水銀（Ⅱ）イオンを含む水溶液に硫化水素を通じると、黒色沈殿が生じる。\n※これを加熱して昇華させると結晶の形が変わって赤色になる
+
+
