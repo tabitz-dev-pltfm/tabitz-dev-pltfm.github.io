@@ -143,7 +143,7 @@ Zn + 2NaOH + 2H2O -> Na2[Zn(OH)4] + H2 | #, #, #, テトラヒドロキシド亜
 ZnO + 2HCl -> ZnCl2 + H2O | 酸化亜鉛[https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Zinc_oxide.jpg/500px-Zinc_oxide.jpg], #, #, # | 酸化亜鉛は両性酸化物である\n（塩酸との反応）
 ZnO + 2NaOH + H2O -> Na2[Zn(OH)4] | #, #, #, # | 酸化亜鉛は両性酸化物である\n（水酸化ナトリウム水溶液との反応）
 Zn^2+ + 2OH- -> Zn(OH)2 | 亜鉛イオン, #, # | 亜鉛イオンを含む水溶液に塩基を加えると水酸化亜鉛の白色沈殿が生じる（イオン反応式）
-Zn(OH)2 + 2OH- -> [Zn(OH)4]2- | #, #, テトラヒドロキシド亜鉛（Ⅱ）酸イオン[https://www.sidaiigakubu.com/study-method/hirano-chemistry/70/img/image_1.png] | 水酸化亜鉛（両性酸化物）が強塩基に溶ける（イオン反応式）
+Zn(OH)2 + 2OH- -> [Zn(OH)4]^2- | #, #, テトラヒドロキシド亜鉛（Ⅱ）酸イオン[https://www.sidaiigakubu.com/study-method/hirano-chemistry/70/img/image_1.png] | 水酸化亜鉛（両性酸化物）が強塩基に溶ける（イオン反応式）
 Zn(OH)2 + 2H+ -> Zn^2+ + 2H2O | #, #, #, # | 水酸化亜鉛（両性酸化物）が酸に溶ける（イオン反応式）
 Zn(OH)2 + 4NH3 -> [Zn(NH3)4]^2+ + 2OH- | #, #, テトラアンミン亜鉛（Ⅱ）イオン[https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/%E3%83%86%E3%83%88%E3%83%A9%E3%82%A2%E3%83%B3%E3%83%9F%E3%83%B3%E4%BA%9C%E9%89%9B%E3%82%A4%E3%82%AA%E3%83%B3.svg/960px-%E3%83%86%E3%83%88%E3%83%A9%E3%82%A2%E3%83%B3%E3%83%9F%E3%83%B3%E4%BA%9C%E9%89%9B%E3%82%A4%E3%82%AA%E3%83%B3.svg.png], # | 水酸化亜鉛がアンモニアに溶ける反応
 Zn^2+ + H2S -> ZnS + 2H+ | #, #, 硫化亜鉛[https://upload.wikimedia.org/wikipedia/commons/e/e2/Zinc_sulfide-edit.jpg], # | 亜鉛イオンを含む中性〜塩基性の水溶液に硫化水素を通じると白色沈殿が生じる
