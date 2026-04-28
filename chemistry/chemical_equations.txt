@@ -107,7 +107,7 @@ SiO2 + 2NaOH -> Na2SiO3 + H2O | #, #, ケイ酸ナトリウム[https://www.fuji-
 Na2SiO3 + 2HCl -> 2NaCl + H2SiO3 | #, #, #, ケイ酸[https://lh4.googleusercontent.com/proxy/-y-Lt4iYFikmZ5q0j3OaUBqt1RYaDrzGB29E_ccfAxHNZJw-FDZ0FTFHOCH9bTW6atTO6O361MKEc4YV3e6u3vrWeJ6OfcU4-MfHgPBwLq_iAbWz-cw] | ケイ酸ナトリウムの水溶液（水ガラス）に塩酸を加えるとゲル状の物質を生じる\n※それを加熱したものはシリカゲルと呼ばれ、乾燥剤として使用される
 
 //アルカリ金属
-2Na + 2H2O -> 2NaOH + H2 | #, #, #, # | ナトリウム（アルカリ金属）は室温で水と反応する。\n（そのうえ空気中でも酸化されやすい）\nだから単体は石油[https://tonensyo.org/wp-content/uploads/2021/09/oil-2-1.png]の中に入れて保存する。
+2Na + 2H2O -> 2NaOH + H2 | ナトリウム[https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:Na_(Sodium).jpg], #, #, # | ナトリウム（アルカリ金属）は室温で水と反応する。\n（そのうえ空気中でも酸化されやすい）\nだから単体は石油[https://tonensyo.org/wp-content/uploads/2021/09/oil-2-1.png]の中に入れて保存する。
 2NaOH + CO2 -> Na2CO3 + H2O | #, #, #, # | 水酸化ナトリウムの性質として、二酸化炭素を吸収し、炭酸塩を生じる働きがある。\nだからゴム栓またはシリコン栓で保存する。[https://rikaniga.net/wp-content/uploads/2023/10/CIMG7244-scaled.jpg]
 
 NaCl + H2O + CO2 + NH3 -> NaHCO3 + NH4Cl | #, #, #, #, 炭酸水素ナトリウム[https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Sodium_bicarbonate.jpg/960px-Sodium_bicarbonate.jpg], # | アンモニアソーダ法（ソルベー法）　ステップ①
