@@ -153,11 +153,10 @@ Hg^2+ + H2S -> HgS + 2H+ | 水銀（Ⅱ）イオン, #, 硫化水銀[https://www
 2Al + 6HCl -> AlCl3 + 3H2 | アルミニウム[https://upload.wikimedia.org/wikipedia/commons/5/5d/Aluminium-4.jpg], #, #, # | アルミニウムは両性元素であり、酸にも強塩基にも溶ける\n（塩酸との反応）
 2Al + 2NaOH + 6H2O -> 2Na[Al(OH)4] + 3H2 | #, #, #, # | アルミニウムは両性元素であり、酸にも強塩基にも溶ける\n（水酸化ナトリウム水溶液との反応）
 2Al + Fe2O3 -> Al2O3 + 2Fe | #, 酸化鉄（Ⅲ）[https://www.tetsugen.co.jp/wp-content/uploads/2025/06/img_02.png], #, # | テルミット反応によって鉄を生成する
-Al(OH)3 + OH- -> [Al(OH)4]- | 水酸化アルミニウム[https://www.kinseimatec.co.jp/kinseimatec_cms/wp-content/uploads/alumina-aluminum-hydroxide_mv01.webp], #, テトラヒドロキシドアルミン酸イオン | ボーキサイトに含まれるアルミナに過剰に水酸化ナトリウム水溶液を加えるとアルミナが溶ける
 Al2O3 + 6HCl -> 2AlCl3 + 3H2O | アルミナ, #, #, # | アルミナに塩酸を加える
 Al2O3 + 2NaOH + 3H2O -> 2Na[Al(OH)4] | #, #, #, # | アルミナに水酸化ナトリウム水溶液を加える
 Al^3+ + 3OH- -> Al(OH)3 | アルミニウムイオン, #, # | Al^3+を含む水溶液に塩基を加える白色沈殿が生じる
-Al(OH)3 + OH- -> [Al(OH)4]- | #, #, # | 水酸化アルミニウムに塩基を加える
+Al(OH)3 + OH- -> [Al(OH)4]- | 水酸化アルミニウム[https://www.kinseimatec.co.jp/kinseimatec_cms/wp-content/uploads/alumina-aluminum-hydroxide_mv01.webp], #, テトラヒドロキシドアルミン酸イオン | 水酸化アルミニウムに塩基を加える
 Al(OH)3 + 3H+ -> Al^3+ + 3H2O | #, #, #, # | 水酸化アルミニウムに酸を加える
 AlK(SO4)2*12H2O -> Al^3+ + K+ + 2SO4^2- + 12H2O | ミョウバン[https://www2e.biglobe.ne.jp/~shinzo/jikken/kessyo/Clear_47mm300.jpg], #, カリウムイオン, 硫酸イオン, # | ミョウバンが水溶液中で電離する様子
 
