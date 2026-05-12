@@ -20,7 +20,7 @@ MnO2 + 4H+ + 2e- -> Mn^2+ + 2H2O | #, #, #, マンガンイオン, # | 酸化剤
 MnO2 + 4HCl -> MnCl2 + Cl2 + 2H2O | 酸化マンガン(Ⅳ)[https://upload.wikimedia.org/wikipedia/commons/3/35/Manganese%28IV%29_oxide.jpg], #, 塩化マンガン[https://upload.wikimedia.org/wikipedia/commons/4/48/Manganous_chloride_anh.jpg], #, # | 酸化マンガン(Ⅳ)に濃塩酸を加える
 
 Cl2 + H2O -> HCl + HClO | #, #, #, 次亜塩素酸[https://img07.shop-pro.jp/PA01409/043/product/152783626.jpg?cmsp_timestamp=20200816162358] | 塩素は水に少し溶けて塩素水となり、その一部は塩酸と次亜塩素酸になる。\n※次亜塩素酸は酸化力があり、漂白作用や殺菌作用がある。
-Cl2 + 2KI -> 2KCl + I2 | #, ヨウ化カリウム[https://www.viatris-e-channel.com/viatris-products/di/detail/assetfile/vd01photo1.jpg], 塩化カリウム[https://upload.wikimedia.org/wikipedia/commons/7/7b/Potassium_chloride.jpg], ヨウ素[https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Iodinecrystals.JPG/960px-Iodinecrystals.JPG https://i-joshi.com/data/202505/img681c5e8557c48.jpg] | 塩素の検出法（ヨウ化カリウムデンプン紙[https://hitoridedeki.wp-x.jp/wp-content/uploads/2019/01/O3KIdenpun.jpg]を青紫色に変える）
+Cl2 + 2KI -> 2KCl + I2 | #, ヨウ化カリウム[https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:Potassium_iodide.jpg], 塩化カリウム[https://upload.wikimedia.org/wikipedia/commons/7/7b/Potassium_chloride.jpg], ヨウ素[https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Iodinecrystals.JPG/960px-Iodinecrystals.JPG https://i-joshi.com/data/202505/img681c5e8557c48.jpg] | 塩素の検出法（ヨウ化カリウムデンプン紙[https://hitoridedeki.wp-x.jp/wp-content/uploads/2019/01/O3KIdenpun.jpg]を青紫色に変える）
 
 MnO4- + 8H+ + 5e- -> Mn^2+ + 4H2O | 過マンガン酸イオン, #, #, #, # | 酸化剤である過マンガン酸イオン（半反応式）
 ClO- + 2H+ + 2e- -> Cl- + H2O | 次亜塩素酸イオン, #, #, #, #, # | 酸化剤である次亜塩素酸イオン（半反応式）
