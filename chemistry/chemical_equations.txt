@@ -192,7 +192,7 @@ Mg -> Mg^2+ + 2e- | #, マグネシウムイオン, # | イオン化傾向の大
 //錯イオン
 Cu^2+ + 2OH- -> Cu(OH)2 | #, #, 水酸化銅[https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/R%C3%A9z%28II%29-hidroxid.jpg/500px-R%C3%A9z%28II%29-hidroxid.jpg] | 銅（Ⅱ）イオンを含む水溶液から銅の錯イオンを生成する\nステップ①
 Cu(OH)2 + 4NH3 -> [Cu(NH3)4]^2+ + 2OH- | #, #, テトラアンミン銅（Ⅱ）イオン, # | 銅（Ⅱ）イオンを含む水溶液から銅の錯イオンを生成する\nステップ②
-2Ag+ + 2OH- -> Ag2O + H2O | #, #, 酸化銀（Ⅰ）[https://upload.wikimedia.org/wikipedia/commons/0/0c/Silver_oxide.jpg], # | 銀イオンを含む水溶液から銀の錯イオンを生成する\nステップ①
+2Ag+ + 2OH- -> Ag2O + H2O | #, #, 酸化銀[https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Silver%28I%29_oxide.JPG/330px-Silver%28I%29_oxide.JPG], # | 銀イオンを含む水溶液から銀の錯イオンを生成する\nステップ①
 Ag2O + 4NH3 + H2O -> 2[Ag(NH3)2]+ + 2OH- | #, #, #, ジアンミン銀（Ⅰ）イオン, # | 銀イオンを含む水溶液から銀の錯イオンを生成する\nステップ②
 Zn^2+ + 2OH- -> Zn(OH)2 | #, #, # | 亜鉛イオンを含む水溶液にアンモニアを加えて亜鉛の錯イオンを生成する\nステップ①
 Zn(OH)2 + 4NH3 -> [Zn(NH3)4]^2+ + 2OH- | #, #, #, # | 亜鉛イオンを含む水溶液にアンモニアを加えて亜鉛の錯イオンを生成する\nステップ②
